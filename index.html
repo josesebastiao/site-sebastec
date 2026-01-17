@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sebastec | Soluções Digitais</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --primary: #2563eb; /* Azul Tech Profissional */
+      --dark: #0f172a;
+      --light: #f8fafc;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+    
+    body { background-color: var(--dark); color: white; overflow-x: hidden; }
+    
+    /* HEADER */
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 40px; max-width: 1100px; margin: auto;
+    }
+    
+    .logo { font-size: 24px; font-weight: 800; letter-spacing: -1px; }
+    .logo span { color: var(--primary); }
+    
+    .btn-contact {
+      background: var(--primary); color: white; padding: 10px 24px;
+      border-radius: 50px; text-decoration: none; font-weight: 600;
+      transition: 0.3s;
+    }
+    .btn-contact:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3); }
+
+    /* HERO SECTION */
+    .hero {
+      text-align: center; padding: 100px 20px;
+      background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+    }
+    
+    h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; font-weight: 800; }
+    .highlight { background: linear-gradient(to right, #60a5fa, #2563eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    
+    p.subtitle { font-size: 1.2rem; color: #94a3b8; max-width: 600px; margin: 0 auto 40px; }
+
+    /* PORTFÓLIO */
+    .portfolio { max-width: 1000px; margin: 0 auto 80px; padding: 0 20px; }
+    .section-title { font-size: 0.9rem; text-transform: uppercase; color: #64748b; letter-spacing: 2px; margin-bottom: 20px; font-weight: 700; }
+    
+    .project-card {
+      background: #1e293b; border-radius: 20px; padding: 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      border: 1px solid #334155; transition: 0.3s; cursor: pointer;
+      text-decoration: none; color: white;
+    }
+    .project-card:hover { border-color: var(--primary); transform: translateY(-5px); }
+    
+    .project-info h3 { font-size: 1.8rem; margin-bottom: 10px; }
+    .project-info p { color: #94a3b8; margin-bottom: 20px; }
+    .tag { background: rgba(37, 99, 235, 0.1); color: #60a5fa; padding: 5px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; }
+    
+    .project-icon { font-size: 3rem; color: var(--primary); }
+
+    /* FOOTER */
+    footer { text-align: center; padding: 40px; color: #475569; font-size: 0.9rem; border-top: 1px solid #1e293b; }
+
+    /* RESPONSIVO */
+    @media (max-width: 768px) {
+      h1 { font-size: 2.5rem; }
+      .project-card { flex-direction: column; text-align: center; gap: 20px; }
+      header { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Sebas<span>tec</span>.</div>
+    <a href="https://wa.me/5527999553035" class="btn-contact">Fale Conosco</a>
+  </header>
+
+  <section class="hero">
+    <h1>Transformamos ideias<br>em <span class="highlight">software inteligente.</span></h1>
+    <p class="subtitle">Desenvolvimento de soluções digitais de alta performance para o seu negócio escalar.</p>
+  </section>
+
+  <section class="portfolio">
+    <div class="section-title">NOSSOS PRODUTOS</div>
+    
+    <a href="https://venda.sebastec.com.br" class="project-card">
+      <div class="project-info">
+        <h3>VendaCerta 2026</h3>
+        <p>A calculadora de precificação definitiva para Shopee e Mercado Livre.</p>
+        <span class="tag">SaaS</span> <span class="tag">Ferramentas</span>
+      </div>
+      <div class="project-icon">
+        <i class="fa-solid fa-calculator"></i>
+      </div>
+    </a>
+
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Sebastec Soluções Digitais.</p>
+    <p style="margin-top:10px; font-size: 0.8rem; opacity: 0.6;">Brasil • Espírito Santo</p>
+  </footer>
+
+</body>
+</html>
