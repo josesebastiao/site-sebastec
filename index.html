@@ -9,33 +9,38 @@
   
   <style>
     :root {
-      --primary: #2563eb;       /* Azul Royal */
-      --primary-dark: #1e40af;  /* Azul Escuro para Hover */
-      --text-main: #0f172a;     /* Preto Suave */
-      --text-gray: #475569;     /* Cinza Texto */
-      --bg-light: #ffffff;      /* Fundo Branco */
-      --bg-off: #f8fafc;        /* Fundo Cinza Muito Claro */
+      --primary: #2563eb;
+      --primary-dark: #1e40af;
+      --text-main: #0f172a;
+      --text-gray: #475569;
+      --bg-light: #ffffff;
+      --bg-off: #f8fafc;
     }
     
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
     
     body { background-color: var(--bg-light); color: var(--text-main); overflow-x: hidden; }
     
-    /* === HEADER === */
+    /* === HEADER (Versão Compacta) === */
     header {
       display: flex; justify-content: space-between; align-items: center;
-      padding: 24px 40px; max-width: 1200px; margin: auto;
+      /* Padding reduzido para ficar mais fino (era 24px 40px) */
+      padding: 16px 40px; 
+      max-width: 1200px; margin: auto;
       background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(10px);
       position: sticky; top: 0; z-index: 100;
+      border-bottom: 1px solid rgba(0,0,0,0.05); /* Linha sutil para separar */
     }
     
-    .logo { font-size: 26px; font-weight: 800; letter-spacing: -0.5px; color: var(--text-main); }
+    .logo { font-size: 24px; font-weight: 800; letter-spacing: -0.5px; color: var(--text-main); }
     .logo span { color: var(--primary); }
     
     .btn-contact {
-      background: var(--text-main); color: white; padding: 12px 28px;
-      border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95rem;
+      background: var(--text-main); color: white; 
+      /* Botão ligeiramente menor para acompanhar o header */
+      padding: 10px 24px; 
+      border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem;
       transition: all 0.3s ease;
     }
     .btn-contact:hover { 
@@ -44,11 +49,12 @@
       box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2); 
     }
 
-    /* === HERO SECTION (COM EFEITO DE PONTOS) === */
+    /* === HERO SECTION === */
     .hero {
-      text-align: center; padding: 120px 20px 100px;
+      text-align: center; 
+      /* Ajuste do padding superior para compensar o header sticky */
+      padding: 100px 20px 80px;
       background-color: var(--bg-light);
-      /* Padrão de pontos sutil para dar ar de tech */
       background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
       background-size: 32px 32px;
     }
@@ -58,7 +64,6 @@
       font-weight: 800; color: var(--text-main); letter-spacing: -1.5px;
     }
     
-    /* Gradiente no texto */
     .highlight { 
       background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%); 
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
@@ -83,7 +88,8 @@
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      /* Melhoria no grid para telas médias */
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 30px;
     }
     
@@ -101,7 +107,6 @@
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05); 
     }
 
-    /* Efeito de brilho no hover */
     .project-card::after {
       content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
       background: linear-gradient(to bottom right, rgba(37,99,235,0.03), transparent);
@@ -127,16 +132,33 @@
     /* FOOTER */
     footer { 
       background: white; border-top: 1px solid #e2e8f0; 
-      padding: 60px 20px; text-align: center; color: var(--text-gray); 
+      padding: 40px 20px; text-align: center; color: var(--text-gray); 
     }
     .footer-logo { font-weight: 800; color: var(--text-main); font-size: 1.2rem; margin-bottom: 10px; display: block;}
 
-    /* RESPONSIVO */
+    /* === RESPONSIVO (MOBILE) === */
     @media (max-width: 768px) {
+      /* Header ainda mais compacto no mobile */
+      header {
+        padding: 12px 20px;
+      }
+      .logo { font-size: 20px; }
+      .btn-contact {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+      }
+
+      /* Ajuste de tipografia e espaçamento do Hero */
+      .hero { padding: 60px 20px 60px; }
       h1 { font-size: 2.5rem; }
-      header { padding: 20px; }
-      .hero { padding: 80px 20px; }
-      .projects-grid { grid-template-columns: 1fr; }
+      p.subtitle { font-size: 1.1rem; margin-bottom: 30px; }
+
+      /* Ajuste do Grid e Cards */
+      .projects-grid { grid-template-columns: 1fr; gap: 20px; }
+      .project-card { padding: 24px; }
+      
+      .section-header { margin-bottom: 30px; }
+      .section-header h2 { font-size: 1.5rem; }
     }
   </style>
 </head>
