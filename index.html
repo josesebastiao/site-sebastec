@@ -8,6 +8,7 @@
   
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231E4A91'/><text x='50' y='55' font-family='Arial, sans-serif' font-size='68' fill='white' dominant-baseline='middle' text-anchor='middle' font-weight='800'>S</text></svg>">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -17,17 +18,45 @@
     <a href="index.html" class="logo-link">
       <img src="logo.png" alt="Sebastec Soluções" class="logo-img">
     </a>
-    <nav>
-      <ul>
-        <li><a href="#" class="active">Home</a></li>
-        <li><a href="#produtos">Sistemas</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="https://www.youtube.com/@sebastectecnologia4547" target="_blank">YouTube</a></li>
-      </ul>
-    </nav>
-    <a href="https://wa.me/5527999553035?text=Olá,%20vi%20o%20site%20e%20gostaria%20de%20conversar!" class="btn-contact" target="_blank">Fale Conosco</a>
+    
+    <div class="desktop-nav">
+      <nav>
+        <ul>
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#produtos">Sistemas</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="https://www.youtube.com/@sebastectecnologia4547" target="_blank">YouTube</a></li>
+        </ul>
+      </nav>
+      <a href="https://wa.me/5527999553035?text=Olá,%20vi%20o%20site%20e%20gostaria%20de%20conversar!" class="btn-contact" target="_blank">Fale Conosco</a>
+    </div>
+
+    <button class="menu-btn" id="openMenuBtn">
+      <i class="fa-solid fa-bars"></i>
+    </button>
   </header>
 
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <img src="logo.png" alt="Sebastec Soluções" class="logo-img">
+      <button class="menu-btn" id="closeMenuBtn">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    
+    <div class="mobile-menu-links">
+      <a href="index.html">Home <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="#produtos">Sistemas <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="sobre.html">Sobre <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="https://www.youtube.com/@sebastectecnologia4547" target="_blank">YouTube <i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+
+    <div class="mobile-menu-footer">
+      <a href="https://wa.me/5527999553035?text=Olá,%20vi%20o%20site%20e%20gostaria%20de%20conversar!" class="btn-contact-mobile" target="_blank">
+        Fale Conosco
+      </a>
+    </div>
+  </div>
   <section class="hero">
     <h1>Tecnologia que Transforma e Simplifica.</h1>
     <p class="subtitle">Criamos sistemas e aplicativos intuitivos que organizam sua gestão, automatizam processos e escalam seus resultados. Esqueça a complexidade, foque no que realmente importa.</p>
@@ -98,6 +127,33 @@
     </a>
     <p style="font-size: 0.95rem; color: var(--text-gray);">&copy; 2026 Sebastec Soluções em Tecnologia. Todos os direitos reservados.</p>
   </footer>
+
+  <script>
+    const openMenuBtn = document.getElementById('openMenuBtn');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileLinks = document.querySelectorAll('.mobile-menu-links a');
+
+    // Abre o menu
+    openMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('open');
+      document.body.style.overflow = 'hidden'; // Trava o fundo
+    });
+
+    // Fecha o menu
+    closeMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = ''; // Destrava o fundo
+    });
+
+    // Fecha o menu ao clicar em um link (ex: rolagem para "Sistemas")
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
 
 </body>
 </html>
