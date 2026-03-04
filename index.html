@@ -7,7 +7,6 @@
   <title>Sebastec | Soluções em Tecnologia</title>
   
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231A3668'/><text x='50' y='55' font-family='Arial, sans-serif' font-size='68' fill='white' dominant-baseline='middle' text-anchor='middle' font-weight='800'>S</text></svg>">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -44,19 +43,17 @@
       border-bottom: 1px solid var(--border-color);
     }
 
-    /* CÓDIGO DA LOGO GRANDONA */
+    /* CSS DA LOGO CORRIGIDO E LIMPO */
     .logo-link {
       display: flex;
       align-items: center;
-      height: 50px; /* Altura que vai aparecer no site */
-      overflow: hidden; /* Corta o excesso de fundo transparente da imagem */
+      text-decoration: none;
     }
 
     .logo-img {
-      height: 260px; /* Faz a imagem ficar gigante */
-      margin-top: -105px; /* Puxa para cima para esconder o vazio */
-      margin-bottom: -105px; /* Puxa para baixo para esconder o vazio */
-      margin-left: -15px; /* Ajusta o alinhamento esquerdo */
+      height: 45px; /* Tamanho ideal e equilibrado para o menu */
+      width: auto;
+      object-fit: contain;
     }
 
     nav ul { display: flex; list-style: none; gap: 32px; }
@@ -112,9 +109,14 @@
     footer { background: var(--bg-gray); border-top: 1px solid var(--border-color); padding: 60px 20px 40px; text-align: center; display: flex; flex-direction: column; align-items: center; }
     
     .footer-logo-link {
-      display: flex; align-items: center; justify-content: center; height: 50px; overflow: hidden; margin-bottom: 20px;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 20px; text-decoration: none;
     }
-    .footer-logo-img { height: 260px; margin-top: -105px; margin-bottom: -105px; margin-left: -15px;}
+    
+    .footer-logo-img { 
+      height: 55px; /* Tamanho do rodapé */
+      width: auto;
+      object-fit: contain;
+    }
 
     @media (max-width: 900px) {
       nav ul { display: none; }
