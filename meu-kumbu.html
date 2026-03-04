@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
-        :root {
-            --primary: #1A3668;
-            --primary-hover: #12264a;
+       :root {
+            --primary: #1E4A91;
+            --primary-hover: #143468;
             --accent: #0ea5e9;
             --bg-white: #ffffff;
             --bg-gray: #f8fafc;
@@ -32,19 +32,14 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 5%;
-            background: var(--bg-white);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid var(--border-color);
-        }
+/* --- Header --- */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: var(--bg-white); position: sticky; top: 0; z-index: 100; }
+        
+        .logo-link { display: flex; align-items: center; text-decoration: none; }
+        .logo-img { height: clamp(50px, 5vw, 75px); width: auto; object-fit: contain; }
 
-        .logo-img { height: 45px; width: auto; object-fit: contain; }
+        .btn-back { display: flex; align-items: center; gap: 8px; color: var(--text-gray); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+        .btn-back:hover { color: var(--primary); }
 
         .btn-back {
             display: flex;
