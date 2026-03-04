@@ -8,14 +8,10 @@
   
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231A3668'/><text x='50' y='54' font-family='sans-serif' font-size='65' fill='white' dominant-baseline='middle' text-anchor='middle' font-weight='800'>S</text></svg>">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     :root {
-      /* Novo Azul extraído da Logo Sebastec */
       --primary: #1A3668; 
       --primary-hover: #12264a;
       --bg-white: #ffffff;
@@ -32,14 +28,12 @@
     }
 
     body {
-      background-color: var(--bg-gray);
+      background-color: var(--bg-white);
       color: var(--text-main);
-      font-family: 'Inter', sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
       overflow-x: hidden;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Outfit', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     /* --- Header Clean --- */
@@ -52,11 +46,10 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
     }
 
     .logo-img {
-      height: 50px; /* Altura ajustada para a logo */
+      height: 50px;
       width: auto;
       object-fit: contain;
     }
@@ -98,13 +91,18 @@
       box-shadow: 0 8px 15px rgba(26, 54, 104, 0.2);
     }
 
-    /* --- Hero Section --- */
+    /* --- Hero Section - Formato Cartão com Fundo de Código --- */
     .hero {
       position: relative;
       text-align: center;
-      padding: 160px 20px;
-      background: linear-gradient(rgba(17, 24, 39, 0.75), rgba(17, 24, 39, 0.85)), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      padding: 140px 20px;
+      /* Fundo com código de programação e película escurecida para leitura fácil */
+      background: linear-gradient(rgba(10, 15, 30, 0.80), rgba(10, 15, 30, 0.85)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
       color: white;
+      max-width: 1300px;
+      margin: 20px auto 60px;
+      border-radius: 32px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
     }
 
     h1 {
@@ -144,7 +142,7 @@
     /* --- Projetos em Destaque (Vídeos) --- */
     .portfolio-section {
       background: var(--bg-white);
-      padding: 100px 5%;
+      padding: 60px 5% 100px;
     }
 
     .container {
@@ -229,6 +227,7 @@
       color: var(--text-main);
       display: flex;
       align-items: center;
+      font-weight: 700;
       gap: 12px;
     }
 
@@ -265,7 +264,7 @@
 
     /* --- Footer --- */
     footer {
-      background: var(--bg-gray); /* Fundo claro para a logo escura aparecer bem */
+      background: var(--bg-gray); 
       border-top: 1px solid var(--border-color);
       padding: 60px 20px 40px;
       text-align: center;
@@ -288,6 +287,11 @@
       }
       .project-info h3 {
         font-size: 1.8rem;
+      }
+      .hero {
+        margin: 20px;
+        padding: 100px 20px;
+        border-radius: 20px;
       }
     }
   </style>

@@ -4,26 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venda Fácil | Sebastec</title>
+    <title>Venda Fácil | Sebastec Soluções em Tecnologia</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800&display=swap"
-        rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231A3668'/><text x='50' y='54' font-family='sans-serif' font-size='65' fill='white' dominant-baseline='middle' text-anchor='middle' font-weight='800'>S</text></svg>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
         :root {
-            --primary: #2563eb;
-            --secondary: #4f46e5;
+            /* Erro de sintaxe corrigido aqui: */
+            --primary: #1A3668;
+            --primary-hover: #12264a;
             --accent: #0ea5e9;
-            --bg-light: #ffffff;
-            --bg-alt: #f8fafc;
-            --bg-card: #ffffff;
-            --text-main: #0f172a;
-            --text-gray: #475569;
-            --border-color: #e2e8f0;
+            --bg-white: #ffffff;
+            --bg-gray: #f8fafc;
+            --text-main: #111827;
+            --text-gray: #4b5563;
+            --border-color: #e5e7eb;
         }
 
         * {
@@ -33,58 +29,32 @@
         }
 
         body {
-            background-color: var(--bg-light);
+            background-color: var(--bg-white);
             color: var(--text-main);
-            font-family: 'Inter', sans-serif;
+            /* Fonte nativa do sistema aplicada aqui */
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        h1,
-        h2,
-        h3,
-        h4,
-        .logo {
-            font-family: 'Outfit', sans-serif;
-        }
-
-        .bg-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
-            background-size: 32px 32px;
-            z-index: -1;
-            opacity: 0.5;
-        }
-
+        /* --- Header --- */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 5%;
-            max-width: 1400px;
-            margin: auto;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            padding: 15px 5%;
+            background: var(--bg-white);
             position: sticky;
             top: 0;
             z-index: 100;
             border-bottom: 1px solid var(--border-color);
         }
 
-        .logo {
-            font-size: 26px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            color: var(--text-main);
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: var(--primary);
+        .logo-img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
         }
 
         .header-actions {
@@ -101,6 +71,7 @@
             text-decoration: none;
             font-weight: 600;
             transition: 0.3s;
+            font-size: 0.95rem;
         }
 
         .btn-back:hover {
@@ -108,23 +79,26 @@
             transform: translateX(-4px);
         }
 
+        /* --- Hero do Produto --- */
         .product-hero {
             text-align: center;
-            padding: 120px 20px 80px;
+            padding: 100px 20px 60px;
+            background: linear-gradient(180deg, var(--bg-gray) 0%, var(--bg-white) 100%);
             position: relative;
-            max-width: 900px;
-            margin: 0 auto;
         }
 
         .product-icon {
-            font-size: 4rem;
+            font-size: 3rem;
             color: var(--primary);
             margin-bottom: 24px;
-            display: inline-block;
-            padding: 24px;
-            background: #eff6ff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background: white;
             border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
+            box-shadow: 0 10px 25px rgba(26, 54, 104, 0.1);
         }
 
         h1 {
@@ -133,13 +107,15 @@
             margin-bottom: 24px;
             font-weight: 800;
             letter-spacing: -1px;
+            color: var(--text-main);
         }
 
         p.subtitle {
-            font-size: clamp(1.05rem, 2vw, 1.25rem);
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
             color: var(--text-gray);
+            max-width: 750px;
             margin: 0 auto 40px;
-            line-height: 1.6;
+            line-height: 1.7;
             font-weight: 400;
         }
 
@@ -149,26 +125,53 @@
             gap: 10px;
             background: var(--primary);
             color: white;
-            padding: 16px 36px;
-            border-radius: 8px;
+            padding: 16px 40px;
+            border-radius: 999px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 8px 20px rgba(26, 54, 104, 0.2);
         }
 
         .btn-primary:hover {
-            background: var(--secondary);
+            background: var(--primary-hover);
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 12px 25px rgba(26, 54, 104, 0.3);
         }
 
+        /* --- Preview do Sistema --- */
+        .system-preview {
+            max-width: 1000px;
+            margin: -20px auto 80px;
+            padding: 0 20px;
+        }
+
+        .preview-box {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: var(--bg-gray);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #cbd5e1;
+            font-size: 4rem;
+            overflow: hidden;
+        }
+
+        .preview-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- Features Section --- */
         .features-section {
-            background: var(--bg-alt);
-            padding: 80px 5%;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
+            padding: 40px 5% 100px;
+            background: var(--bg-white);
         }
 
         .features-grid {
@@ -176,124 +179,119 @@
             margin: auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 40px;
         }
 
         .feature-card {
-            background: var(--bg-card);
-            border-radius: 16px;
-            padding: 32px;
-            border: 1px solid var(--border-color);
-            text-align: center;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            background: var(--bg-gray);
+            border-radius: 24px;
+            padding: 40px 32px;
+            border: 1px solid transparent;
+            text-align: left;
             transition: 0.3s;
         }
 
         .feature-card:hover {
             transform: translateY(-5px);
-            border-color: var(--primary);
+            background: white;
+            border-color: var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
 
         .feature-card i {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--primary);
-            margin-bottom: 16px;
+            margin-bottom: 24px;
         }
 
         .feature-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 12px;
+            font-size: 1.4rem;
+            margin-bottom: 16px;
             color: var(--text-main);
+            font-weight: 700;
         }
 
         .feature-card p {
             color: var(--text-gray);
             line-height: 1.6;
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
+        /* --- Footer --- */
         footer {
-            background: white;
-            padding: 40px 20px;
+            background: var(--bg-gray);
+            border-top: 1px solid var(--border-color);
+            padding: 60px 20px 40px;
             text-align: center;
             color: var(--text-gray);
         }
 
-        .footer-logo {
-            font-weight: 800;
-            font-family: 'Outfit', sans-serif;
-            color: var(--text-main);
-            font-size: 1.2rem;
-            text-decoration: none;
-        }
-
-        .footer-logo span {
-            color: var(--primary);
+        .footer-img {
+            height: 50px;
+            margin-bottom: 20px;
         }
 
         @media (max-width: 768px) {
             header {
-                padding: 16px 5%;
+                padding: 15px 5%;
             }
-
             .product-hero {
-                padding: 80px 20px 60px;
-            }
-
-            .product-icon {
-                font-size: 3rem;
-                padding: 16px;
+                padding: 80px 20px 40px;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="bg-pattern"></div>
 
     <header>
-        <a href="index.html" class="logo">Sebas<span>tec</span>.</a>
+        <a href="index.html">
+            <img src="logo.png" alt="Sebastec Soluções" class="logo-img">
+        </a>
         <div class="header-actions">
-            <a href="index.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+            <a href="index.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Voltar ao Início</a>
         </div>
     </header>
 
     <section class="product-hero">
         <div class="product-icon"><i class="fa-solid fa-store"></i></div>
-        <h1>Venda Fácil</h1>
-        <p class="subtitle">Seu sistema de gestão e PDV ideal para lojas varejistas. Controle rígido de estoque, rápido
-            fluxo de caixa e relatórios para impulsionar seus lucros de forma inteligente.</p>
-        <a href="https://vendafacil.sebastec.com.br/app.html" class="btn-primary" target="_blank">Acessar o Venda Fácil
-            <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <h1>Venda Fácil PDV</h1>
+        <p class="subtitle">Gestão e Frente de Caixa que acelera o seu varejo. Elimine as filas, controle seu estoque ao milímetro e foque no que importa: lucrar com inteligência.</p>
+        <a href="https://vendafacil.sebastec.com.br/app.html" class="btn-primary" target="_blank">Acessar o Sistema <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+    </section>
+
+    <section class="system-preview">
+        <div class="preview-box">
+            <i class="fa-regular fa-image" title="Espaço para foto do sistema"></i>
+            </div>
     </section>
 
     <section class="features-section">
         <div class="features-grid">
             <div class="feature-card">
                 <i class="fa-solid fa-cash-register"></i>
-                <h3>PDV Rápido e Seguro</h3>
-                <p>Frente de caixa incrivelmente simples para que os atendentes fechem vendas sem travamentos, reduzindo
-                    drasticamente todas as filas de espera.</p>
+                <h3>Frente de Caixa Ágil</h3>
+                <p>Feche vendas em segundos e sem travamentos. Uma interface incrivelmente simples para seus atendentes reduzirem drasticamente o tempo de espera do cliente.</p>
             </div>
             <div class="feature-card">
                 <i class="fa-solid fa-boxes-stacked"></i>
-                <h3>Controle de Estoque</h3>
-                <p>Identifique produtos em falta e evite furtos com o gerenciamento total e seguro da movimentação do
-                    histórico dos produtos da sua loja física.</p>
+                <h3>Controle de Estoque Fino</h3>
+                <p>Nunca mais perca vendas por falta de produto. Monitore todas as entradas e saídas, mantenha o histórico seguro e evite perdas ou furtos na sua loja física.</p>
             </div>
             <div class="feature-card">
-                <i class="fa-solid fa-file-invoice-dollar"></i>
-                <h3>Relatórios Avançados</h3>
-                <p>Entenda o que vende mais e veja análises de curva, descobrindo com grande facilidade de visualização
-                    os seus principais ganhadores de dinheiro.</p>
+                <i class="fa-solid fa-chart-pie"></i>
+                <h3>Relatórios Estratégicos</h3>
+                <p>Entenda a saúde financeira do seu negócio. Descubra quais são seus produtos mais vendidos (Curva A) através de dashboards fáceis de visualizar e interpretar.</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <a href="index.html" style="text-decoration:none;"><span class="footer-logo">Sebas<span>tec</span>.</span></a>
-        <p style="margin-top: 10px; font-size: 0.9rem;">&copy; 2026 Sebastec Soluções Digitais.</p>
+        <a href="index.html">
+            <img src="logo.png" alt="Sebastec Soluções" class="footer-img">
+        </a>
+        <p style="margin-top: 10px; font-size: 0.95rem;">&copy; 2026 Sebastec Soluções em Tecnologia.</p>
     </footer>
-</body>
 
+</body>
 </html>
