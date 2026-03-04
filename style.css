@@ -6,12 +6,13 @@
   --text-main: #111827;
   --text-gray: #4b5563;
   --border-color: #e5e7eb;
+  --card-bg: #f1f5f9; /* Cinza clarinho dos cards do PicPay */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  background-color: var(--bg-main); /* Fundo por trás do sticky */
+  background-color: var(--bg-main); 
   color: var(--text-main);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   overflow-x: hidden;
@@ -19,34 +20,22 @@ body {
 }
 
 /* =========================================
-   HEADER (ESTILO PICPAY)
+   HEADER DESKTOP
    ========================================= */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 5%;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  position: fixed; /* Header fixo no topo sempre */
-  width: 100%;
-  top: 0;
-  z-index: 999;
+  display: flex; justify-content: space-between; align-items: center; padding: 15px 5%;
+  background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  position: fixed; width: 100%; top: 0; z-index: 999; border-bottom: 1px solid var(--border-color);
 }
-
 .header-left { display: flex; align-items: center; gap: 40px; }
 .logo-link { display: flex; align-items: center; text-decoration: none; }
 .logo-img { height: clamp(35px, 4vw, 45px); width: auto; object-fit: contain; }
-
 .desktop-nav ul { display: flex; list-style: none; gap: 30px; margin: 0; padding: 0; }
 .desktop-nav a { text-decoration: none; color: var(--text-main); font-weight: 700; font-size: 1rem; transition: 0.3s; }
 .desktop-nav a:hover, .desktop-nav a.active { color: var(--primary); }
-
 .header-right { display: flex; align-items: center; }
 .btn-contact { background: var(--primary); color: white; padding: 12px 28px; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: 0.3s; }
 .btn-contact:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 8px 15px rgba(30, 74, 145, 0.2); }
-
 .menu-btn { display: none; }
 
 /* =========================================
@@ -66,115 +55,148 @@ header {
 .btn-contact-mobile { display: flex; justify-content: center; align-items: center; width: 100%; padding: 18px; border-radius: 999px; background: var(--primary); color: white; text-decoration: none; font-weight: 700; font-size: 1.1rem; }
 
 /* =========================================
-   EFEITO PICPAY: BANNER FIXO NO FUNDO
+   BANNER FIXO NO FUNDO
    ========================================= */
 .hero-sticky {
-  position: sticky;
-  top: 0;
-  z-index: 0; /* Fica atrás das outras seções */
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  padding: 80px 5% 0; /* Espaço para o header */
-  background: linear-gradient(rgba(10, 15, 30, 0.70), rgba(10, 15, 30, 0.85)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-  color: white;
+  position: sticky; top: 0; z-index: 0; height: 100vh; width: 100%; display: flex; align-items: center; padding: 80px 5% 0; 
+  background: linear-gradient(rgba(10, 15, 30, 0.70), rgba(10, 15, 30, 0.85)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; color: white;
 }
-
-.hero-content {
-  max-width: 650px;
-  text-align: left;
-}
-
+.hero-content { max-width: 650px; text-align: left; }
 .hero-content h1 { font-size: clamp(3rem, 5vw, 4.5rem); line-height: 1.1; margin-bottom: 20px; font-weight: 800; letter-spacing: -1px; }
 .hero-content p { font-size: clamp(1.1rem, 2vw, 1.3rem); color: #e5e7eb; margin-bottom: 40px; line-height: 1.6; }
 .btn-primary { background: white; color: var(--text-main); padding: 18px 40px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 1.1rem; display: inline-block; transition: 0.3s; }
 .btn-primary:hover { background: var(--primary); color: white; transform: translateY(-2px); }
 
 /* =========================================
-   EFEITO PICPAY: CONTEÚDO DESLIZANDO POR CIMA
+   CONTEÚDO DESLIZANDO POR CIMA
    ========================================= */
 .content-slider {
-  position: relative;
-  z-index: 10; /* Passa por cima do hero-sticky */
-  background-color: var(--bg-white);
-  border-radius: 40px 40px 0 0; /* Borda arredondada do PicPay no topo */
-  box-shadow: 0 -10px 40px rgba(0,0,0,0.1);
-  overflow: hidden;
+  position: relative; z-index: 10; background-color: var(--bg-white); border-radius: 40px 40px 0 0; box-shadow: 0 -10px 40px rgba(0,0,0,0.1); overflow: hidden;
 }
-
-.intro-section {
-  padding: 80px 5%;
-  text-align: center;
-  background: var(--bg-white); /* Fundo Branco */
-}
-
-.intro-section h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 20px; }
-.intro-section p { font-size: 1.15rem; color: var(--text-gray); max-width: 800px; margin: 0 auto; line-height: 1.6; }
 
 /* =========================================
-   EFEITO PICPAY: CARDS SOBRE A IMAGEM
+   CARDS DOS SISTEMAS (ESTILO PICPAY)
    ========================================= */
-.picpay-products-section {
-  background-color: var(--bg-gray); /* Fundo Cinza */
+.systems-grid-section {
+  background-color: var(--bg-white);
   padding: 100px 5%;
 }
 
-.picpay-container {
-  max-width: 1300px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  gap: 5%;
+.container { max-width: 1300px; margin: auto; }
+
+.section-main-title {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 50px;
+  letter-spacing: -1px;
 }
 
-.picpay-text-area { width: 35%; }
-.picpay-text-area h2 { font-size: clamp(2rem, 3vw, 3rem); font-weight: 800; margin-bottom: 20px; line-height: 1.1; }
-.picpay-text-area p { font-size: 1.1rem; color: var(--text-gray); line-height: 1.6; }
-
-.picpay-image-area {
-  width: 60%;
-  background: url('https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-  border-radius: 32px;
-  padding: 40px;
-  display: flex;
-  align-items: stretch;
-}
-
-.picpay-cards-grid {
+.cards-grid-picpay {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
 }
 
-.pic-card {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  padding: 30px;
-  border-radius: 20px;
-  text-decoration: none;
-  transition: 0.3s;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+/* O Card em Si */
+.sys-card {
+  background-color: var(--card-bg);
+  border-radius: 24px;
+  padding: 40px 30px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  align-items: flex-start;
+  text-decoration: none;
+  border: 2px solid transparent;
+  /* Animação com efeito "Bouncy" (Elástico) Premium */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.27);
 }
 
-.pic-card:hover {
-  transform: translateY(-5px);
-  background: white;
-  box-shadow: 0 20px 40px rgba(30, 74, 145, 0.15);
+.sys-card:hover {
+  transform: translateY(-10px);
+  background-color: var(--bg-white);
+  border-color: var(--border-color);
+  box-shadow: 0 25px 50px rgba(30, 74, 145, 0.1); /* Sombra azulada */
 }
 
-.pic-card i { font-size: 2rem; color: var(--primary); margin-bottom: 20px; }
-.pic-card h3 { font-size: 1.3rem; color: var(--text-main); font-weight: 800; margin-bottom: 10px; }
-.pic-card p { font-size: 0.95rem; color: var(--text-gray); line-height: 1.5; margin: 0; }
+/* Ícone Principal do Card */
+.sys-card-icon {
+  font-size: 2rem;
+  color: var(--text-main);
+  margin-bottom: 30px;
+  transition: 0.3s;
+}
+
+.sys-card:hover .sys-card-icon {
+  color: var(--primary);
+  transform: scale(1.15); /* Ícone cresce ao passar o mouse */
+}
+
+/* Textos do Card */
+.sys-card h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 12px;
+  transition: 0.3s;
+  letter-spacing: -0.5px;
+}
+
+.sys-card:hover h3 { color: var(--primary); }
+
+.sys-card p {
+  font-size: 1.05rem;
+  color: var(--text-gray);
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Setinha Inferior do Card */
+.sys-arrow {
+  margin-top: auto;
+  align-self: flex-end;
+  color: var(--text-main);
+  font-size: 1.2rem;
+  transition: all 0.3s;
+}
+
+.sys-card:hover .sys-arrow {
+  transform: translateX(6px); /* Setinha vai pra direita */
+  color: var(--primary);
+}
+
+/* =========================================
+   SEÇÃO AUTORIDADE (IMAGEM + TEXTO)
+   ========================================= */
+.picpay-authority-section {
+  background-color: var(--bg-white); 
+  padding: 0 5% 100px;
+}
+.picpay-container {
+  max-width: 1300px; margin: auto; display: flex; align-items: center; gap: 5%;
+}
+.picpay-text-area { width: 45%; }
+.picpay-text-area h2 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 800; margin-bottom: 20px; line-height: 1.1; letter-spacing: -1px;}
+.picpay-text-area p { font-size: 1.2rem; color: var(--text-gray); line-height: 1.6; margin-bottom: 40px;}
+
+.btn-outline {
+  display: inline-block; padding: 16px 36px; border-radius: 999px;
+  border: 2px solid var(--text-main); color: var(--text-main);
+  font-weight: 700; text-decoration: none; transition: 0.3s;
+}
+.btn-outline:hover { background-color: var(--text-main); color: white; }
+
+.picpay-image-area {
+  width: 50%;
+  aspect-ratio: 4/3;
+  background: url('https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+  border-radius: 40px;
+}
 
 /* =========================================
    FOOTER
    ========================================= */
-footer { background: var(--bg-white); border-top: 1px solid var(--border-color); padding: 50px 20px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+footer { background: var(--bg-gray); border-top: 1px solid var(--border-color); padding: 50px 20px 30px; text-align: center; display: flex; flex-direction: column; align-items: center; }
 .footer-logo-link { display: flex; align-items: center; justify-content: center; margin-bottom: 20px; text-decoration: none; }
 .footer-logo-img { height: clamp(40px, 6vw, 60px); width: auto; object-fit: contain; }
 
@@ -184,16 +206,18 @@ footer { background: var(--bg-white); border-top: 1px solid var(--border-color);
 @media (max-width: 900px) {
   header { padding: 10px 15px; }
   .desktop-nav, .desktop-btn { display: none; }
-  
   .menu-btn { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background-color: transparent; border: none; color: var(--text-main); font-size: 1.5rem; cursor: pointer; }
   .logo-img { height: 32px; }
 
+  .hero-sticky { padding: 100px 20px 0; }
   .hero-content { text-align: center; margin: 0 auto; }
   .hero-content h1 { font-size: 2.2rem; }
   .btn-primary { width: 100%; text-align: center; }
 
-  .picpay-container { flex-direction: column; gap: 40px; }
-  .picpay-text-area { width: 100%; text-align: center; }
-  .picpay-image-area { width: 100%; padding: 20px; border-radius: 24px; }
-  .picpay-cards-grid { grid-template-columns: 1fr; }
+  .systems-grid-section { padding: 60px 5%; }
+  .section-main-title { font-size: 2rem; margin-bottom: 30px; }
+
+  .picpay-container { flex-direction: column; gap: 40px; text-align: center; }
+  .picpay-text-area { width: 100%; }
+  .picpay-image-area { width: 100%; border-radius: 24px; }
 }
