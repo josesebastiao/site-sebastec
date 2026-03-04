@@ -14,7 +14,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  background-color: var(--bg-white); 
+  background-color: var(--bg-main); 
   color: var(--text-main);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   overflow-x: hidden;
@@ -110,6 +110,17 @@ header {
 .master-title { max-width: 800px; }
 .master-title h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; font-weight: 800; margin-bottom: 24px; color: white; letter-spacing: -1px; }
 .master-title p { font-size: 1.15rem; line-height: 1.8; color: #cbd5e1; margin-bottom: 20px; }
+
+/* Estilização especial para a última frase de impacto */
+.master-title p:last-child {
+  font-size: 1.25rem;
+  color: white;
+  font-weight: 600;
+  margin-top: 35px;
+  border-left: 4px solid var(--primary);
+  padding-left: 18px;
+}
+
 .btn-white { background: white; color: var(--text-main); padding: 16px 36px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 1.05rem; display: inline-flex; align-items: center; gap: 12px; transition: 0.3s; white-space: nowrap; }
 .btn-white:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
 
@@ -128,11 +139,11 @@ header {
    PÁGINAS DE PRODUTOS
    ========================================= */
 .product-hero { text-align: center; padding: 150px 20px 60px; background: linear-gradient(180deg, var(--bg-gray) 0%, var(--bg-white) 100%); position: relative; }
-.product-icon { font-size: 3rem; color: var(--primary); margin-bottom: 24px; display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; background: white; border-radius: 20px; box-shadow: 0 10px 25px rgba(26, 54, 104, 0.1); }
+.product-icon { font-size: 3rem; color: var(--primary); margin-bottom: 24px; display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; background: white; border-radius: 20px; box-shadow: 0 10px 25px rgba(30, 74, 145, 0.1); }
 .product-hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 24px; font-weight: 800; letter-spacing: -1px; color: var(--text-main); }
 .product-hero p.subtitle { font-size: clamp(1.1rem, 2vw, 1.25rem); color: var(--text-gray); max-width: 750px; margin: 0 auto 40px; line-height: 1.7; font-weight: 400; }
-.product-hero .btn-primary { background: var(--primary); color: white; padding: 16px 40px; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 1.1rem; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; box-shadow: 0 8px 20px rgba(26, 54, 104, 0.2); }
-.product-hero .btn-primary:hover { background: var(--primary-hover); transform: translateY(-3px); box-shadow: 0 12px 25px rgba(26, 54, 104, 0.3); }
+.product-hero .btn-primary { background: var(--primary); color: white; padding: 16px 40px; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 1.1rem; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; box-shadow: 0 8px 20px rgba(30, 74, 145, 0.2); }
+.product-hero .btn-primary:hover { background: var(--primary-hover); transform: translateY(-3px); box-shadow: 0 12px 25px rgba(30, 74, 145, 0.3); }
 
 .system-preview { max-width: 1000px; margin: -20px auto 80px; padding: 0 20px; }
 .preview-box { width: 100%; aspect-ratio: 16/9; background: var(--bg-gray); border: 1px solid var(--border-color); border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); display: flex; align-items: center; justify-content: center; color: #cbd5e1; font-size: 4rem; overflow: hidden; }
@@ -154,7 +165,7 @@ footer { background: var(--bg-light); border-top: 1px solid var(--border-blue); 
 .footer-logo-img { height: clamp(40px, 6vw, 60px); width: auto; object-fit: contain; }
 
 /* =========================================
-   AJUSTES MOBILE
+   AJUSTES MOBILE (A MÁGICA ACONTECE AQUI)
    ========================================= */
 @media (max-width: 900px) {
   header { padding: 10px 15px; }
@@ -164,25 +175,28 @@ footer { background: var(--bg-light); border-top: 1px solid var(--border-blue); 
 
   /* Ajustes Index */
   .hero-sticky { padding: 100px 20px 0; }
-  .hero-content { text-align: center; margin: 0 auto; }
-  .hero-content h1 { font-size: 2.2rem; }
-  .btn-primary { width: 100%; justify-content: center; }
+  .hero-content { text-align: left; margin: 0; /* Alinhamento à esquerda mantido */ }
+  .hero-content h1 { font-size: 2.5rem; }
+  .hero-content p { font-size: 1.1rem; }
+  .btn-primary { width: 100%; justify-content: center; padding: 18px 20px; }
 
   .systems-grid-section { padding: 60px 5%; }
-  .section-main-title { font-size: 2rem; margin-bottom: 30px; text-align: center; }
+  .section-main-title { font-size: 2rem; margin-bottom: 30px; text-align: left; } /* Título à esquerda */
 
   .picpay-authority-section { padding: 80px 5%; }
-  .picpay-container { flex-direction: column; gap: 40px; text-align: center; }
+  .picpay-container { flex-direction: column; gap: 40px; text-align: left; } /* Textos à esquerda */
   .picpay-text-area { width: 100%; }
   .picpay-text-area h2 { font-size: 2.2rem; }
   .picpay-image-area { width: 100%; border-radius: 24px; }
   .btn-outline { width: 100%; justify-content: center; text-align: center; }
 
-  /* Ajustes Sobre */
-  .master-header { flex-direction: column; text-align: center; }
-  .master-title h1 { font-size: 2.2rem; }
-  .btn-white { width: 100%; justify-content: center; }
-  .team-grid { grid-template-columns: 1fr; gap: 60px; }
+  /* Ajustes SOBRE */
+  .master-block { padding: 120px 20px 80px; } /* Ajuste de padding */
+  .master-header { flex-direction: column; text-align: left; /* ALINHAMENTO À ESQUERDA AQUI! */ }
+  .master-title h1 { font-size: 2.4rem; margin-bottom: 20px; }
+  .master-title p { font-size: 1.05rem; margin-bottom: 20px; }
+  .btn-white { width: 100%; justify-content: center; margin-top: 10px;}
+  .team-grid { grid-template-columns: 1fr; gap: 60px; margin-top: 40px; }
   .team-photo-box { aspect-ratio: 1 / 1; }
 
   /* Ajustes Produtos */
