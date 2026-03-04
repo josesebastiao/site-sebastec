@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sebastec | Soluções em Tecnologia</title>
   
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231A3668'/><text x='50' y='54' font-family='sans-serif' font-size='65' fill='white' dominant-baseline='middle' text-anchor='middle' font-weight='800'>S</text></svg>">
+  <link rel="icon" type="image/png" href="icone.png">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -36,7 +36,7 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
-    /* --- Header Clean --- */
+    /* --- Header --- */
     header {
       display: flex;
       justify-content: space-between;
@@ -48,10 +48,14 @@
       z-index: 100;
     }
 
+    /* Ajuste de zoom na logo para ignorar o espaço transparente */
     .logo-img {
-      height: 50px;
+      height: 45px;
       width: auto;
       object-fit: contain;
+      transform: scale(1.8); /* Dá um zoom de 80% na logo */
+      transform-origin: left center; /* Garante que o zoom cresça para a direita e não empurre a margem */
+      margin-left: 10px;
     }
 
     nav ul {
@@ -91,12 +95,11 @@
       box-shadow: 0 8px 15px rgba(26, 54, 104, 0.2);
     }
 
-    /* --- Hero Section - Formato Cartão com Fundo de Código --- */
+    /* --- Hero Section - Formato Cartão --- */
     .hero {
       position: relative;
       text-align: center;
       padding: 140px 20px;
-      /* Fundo com código de programação e película escurecida para leitura fácil */
       background: linear-gradient(rgba(10, 15, 30, 0.80), rgba(10, 15, 30, 0.85)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
       color: white;
       max-width: 1300px;
@@ -139,7 +142,7 @@
       transform: scale(1.05);
     }
 
-    /* --- Projetos em Destaque (Vídeos) --- */
+    /* --- Projetos em Destaque --- */
     .portfolio-section {
       background: var(--bg-white);
       padding: 60px 5% 100px;
@@ -272,8 +275,9 @@
     }
 
     .footer-img {
-      height: 60px;
+      height: 40px;
       margin-bottom: 20px;
+      transform: scale(1.6);
     }
 
     @media (max-width: 900px) {
@@ -328,17 +332,6 @@
       </div>
 
       <div class="projects-grid">
-        
-        <div class="project-card">
-          <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Demonstração Venda Fácil" allowfullscreen></iframe>
-          </div>
-          <div class="project-info">
-            <h3><i class="fa-solid fa-store"></i> Venda Fácil</h3>
-            <p>Frente de caixa (PDV) e gestão de estoque ultrarrápida para o varejo físico. Reduza filas, evite perdas e tenha relatórios precisos para alavancar seus lucros de forma estratégica.</p>
-            <a href="venda-facil.html" class="project-link">Ver Detalhes do App</a>
-          </div>
-        </div>
 
         <div class="project-card">
           <div class="video-container">
@@ -370,6 +363,17 @@
             <h3><i class="fa-solid fa-motorcycle"></i> Pedjá</h3>
             <p>O aplicativo de delivery próprio que liberta seu restaurante das taxas abusivas. Ofereça um cardápio digital impecável e gerencie seus pedidos com total controle e margem de lucro real.</p>
             <a href="pedja.html" class="project-link">Ver Detalhes do App</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Demonstração Venda Fácil" allowfullscreen></iframe>
+          </div>
+          <div class="project-info">
+            <h3><i class="fa-solid fa-store"></i> Venda Fácil</h3>
+            <p>Frente de caixa (PDV) e gestão de estoque ultrarrápida para o varejo físico. Reduza filas, evite perdas e tenha relatórios precisos para alavancar seus lucros de forma estratégica.</p>
+            <a href="venda-facil.html" class="project-link">Ver Detalhes do App</a>
           </div>
         </div>
 
