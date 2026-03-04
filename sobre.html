@@ -125,7 +125,7 @@
 
     .team-card { text-align: center; }
     
-    /* Fundo da Foto (Azul Sebastec) */
+    /* Fundo da Foto */
     .team-photo-box {
       background-color: var(--primary); 
       border-radius: 30px;
@@ -133,16 +133,16 @@
       margin-bottom: 30px;
       overflow: hidden;
       display: flex;
-      align-items: flex-end;
+      align-items: center; /* Centraliza a foto verticalmente */
       justify-content: center;
       position: relative;
     }
 
     .team-photo-box img {
       width: 100%;
-      height: 95%; /* Dá espaço para a cabeça "respirar" */
+      height: 100%; /* Corrigido de 95% para 100% para remover a faixa azul */
       object-fit: cover;
-      object-position: bottom;
+      object-position: center; /* Mantém o rosto centralizado */
       transition: 0.4s;
     }
     .team-card:hover .team-photo-box img { transform: scale(1.05); }
@@ -195,7 +195,7 @@
       .master-title h1 { font-size: 2.2rem; }
       
       .team-grid { grid-template-columns: 1fr; gap: 60px; }
-      .team-photo-box { aspect-ratio: 1 / 1; /* Fica quadrado no celular para não ficar muito alto */ }
+      .team-photo-box { aspect-ratio: 1 / 1; }
     }
   </style>
 </head>
