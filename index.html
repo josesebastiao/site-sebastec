@@ -15,12 +15,12 @@
 <body>
 
   <header>
-    <a href="index.html" class="logo-link">
-      <img src="logo.png" alt="Sebastec Soluções" class="logo-img">
-    </a>
-    
-    <div class="desktop-nav">
-      <nav>
+    <div class="header-left">
+      <a href="index.html" class="logo-link">
+        <img src="logo.png" alt="Sebastec Soluções" class="logo-img">
+      </a>
+      
+      <nav class="desktop-nav">
         <ul>
           <li><a href="#" class="active">Home</a></li>
           <li><a href="#produtos">Sistemas</a></li>
@@ -28,12 +28,15 @@
           <li><a href="https://www.youtube.com/@sebastectecnologia4547" target="_blank">YouTube</a></li>
         </ul>
       </nav>
-      <a href="https://wa.me/5527999553035?text=Olá,%20vi%20o%20site%20e%20gostaria%20de%20conversar!" class="btn-contact" target="_blank">Fale Conosco</a>
     </div>
 
-    <button class="menu-btn" id="openMenuBtn">
-      <i class="fa-solid fa-bars"></i>
-    </button>
+    <div class="header-right">
+      <a href="https://wa.me/5527999553035" class="btn-contact desktop-btn" target="_blank">Fale Conosco</a>
+      
+      <button class="menu-btn" id="openMenuBtn">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
   </header>
 
   <div class="mobile-menu" id="mobileMenu">
@@ -52,7 +55,7 @@
     </div>
 
     <div class="mobile-menu-footer">
-      <a href="https://wa.me/5527999553035?text=Olá,%20vi%20o%20site%20e%20gostaria%20de%20conversar!" class="btn-contact-mobile" target="_blank">
+      <a href="https://wa.me/5527999553035" class="btn-contact-mobile" target="_blank">
         Fale Conosco
       </a>
     </div>
@@ -137,16 +140,16 @@
     // Abre o menu
     openMenuBtn.addEventListener('click', () => {
       mobileMenu.classList.add('open');
-      document.body.style.overflow = 'hidden'; // Trava o fundo
+      document.body.style.overflow = 'hidden'; 
     });
 
     // Fecha o menu
     closeMenuBtn.addEventListener('click', () => {
       mobileMenu.classList.remove('open');
-      document.body.style.overflow = ''; // Destrava o fundo
+      document.body.style.overflow = ''; 
     });
 
-    // Fecha o menu ao clicar em um link (ex: rolagem para "Sistemas")
+    // Fecha o menu ao clicar em um link
     mobileLinks.forEach(link => {
       link.addEventListener('click', () => {
         mobileMenu.classList.remove('open');
