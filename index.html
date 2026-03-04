@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sebastec | Soluções Digitais</title>
+  <title>Sebastec | Soluções em Tecnologia</title>
   
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232563eb'/><text x='50' y='54' font-family='sans-serif' font-size='65' fill='white' dominant-baseline='middle' text-anchor='middle' font-weight='800'>S</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231A3668'/><text x='50' y='54' font-family='sans-serif' font-size='65' fill='white' dominant-baseline='middle' text-anchor='middle' font-weight='800'>S</text></svg>">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,8 +15,9 @@
 
   <style>
     :root {
-      --primary: #2563eb;
-      --primary-hover: #1d4ed8;
+      /* Novo Azul extraído da Logo Sebastec */
+      --primary: #1A3668; 
+      --primary-hover: #12264a;
       --bg-white: #ffffff;
       --bg-gray: #f8fafc;
       --text-main: #111827;
@@ -37,7 +38,7 @@
       overflow-x: hidden;
     }
 
-    h1, h2, h3, h4, .logo {
+    h1, h2, h3, h4 {
       font-family: 'Outfit', sans-serif;
     }
 
@@ -46,7 +47,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 5%;
+      padding: 15px 5%;
       background: var(--bg-white);
       position: sticky;
       top: 0;
@@ -54,16 +55,10 @@
       box-shadow: 0 4px 20px rgba(0,0,0,0.03);
     }
 
-    .logo {
-      font-size: 28px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      color: var(--text-main);
-      text-decoration: none;
-    }
-
-    .logo span {
-      color: var(--primary);
+    .logo-img {
+      height: 50px; /* Altura ajustada para a logo */
+      width: auto;
+      object-fit: contain;
     }
 
     nav ul {
@@ -90,7 +85,7 @@
       background: var(--primary);
       color: white;
       padding: 12px 32px;
-      border-radius: 999px; /* Formato pílula igual Ndapitila */
+      border-radius: 999px;
       text-decoration: none;
       font-weight: 600;
       font-size: 0.95rem;
@@ -100,7 +95,7 @@
     .btn-contact:hover {
       background: var(--primary-hover);
       transform: translateY(-2px);
-      box-shadow: 0 8px 15px rgba(37, 99, 235, 0.2);
+      box-shadow: 0 8px 15px rgba(26, 54, 104, 0.2);
     }
 
     /* --- Hero Section --- */
@@ -117,7 +112,7 @@
       line-height: 1.1;
       margin-bottom: 24px;
       font-weight: 800;
-      letter-spacing: -1.5px;
+      letter-spacing: -1px;
     }
 
     p.subtitle {
@@ -203,17 +198,17 @@
 
     .project-card:nth-child(even) {
       grid-template-columns: 1fr 1fr;
-      direction: rtl; /* Inverte o lado da imagem/video no CSS */
+      direction: rtl; 
     }
 
     .project-card:nth-child(even) > * {
-      direction: ltr; /* Volta o texto pro lado certo */
+      direction: ltr; 
     }
 
     .video-container {
       position: relative;
       width: 100%;
-      padding-bottom: 56.25%; /* Proporção 16:9 */
+      padding-bottom: 56.25%; 
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 10px 20px rgba(0,0,0,0.1);
@@ -270,24 +265,21 @@
 
     /* --- Footer --- */
     footer {
-      background: var(--text-main);
-      padding: 60px 20px;
+      background: var(--bg-gray); /* Fundo claro para a logo escura aparecer bem */
+      border-top: 1px solid var(--border-color);
+      padding: 60px 20px 40px;
       text-align: center;
-      color: #9ca3af;
+      color: var(--text-gray);
     }
 
-    .footer-logo {
-      color: white;
-      font-size: 2rem;
-    }
-
-    .footer-logo span {
-      color: var(--primary);
+    .footer-img {
+      height: 60px;
+      margin-bottom: 20px;
     }
 
     @media (max-width: 900px) {
       nav ul {
-        display: none; /* Esconde menu no mobile para simplificar */
+        display: none; 
       }
       .project-card, .project-card:nth-child(even) {
         grid-template-columns: 1fr;
@@ -304,7 +296,9 @@
 <body>
 
   <header>
-    <a href="index.html" class="logo">Sebas<span>tec</span>.</a>
+    <a href="index.html">
+      <img src="logo.png" alt="Sebastec Soluções em Tecnologia" class="logo-img">
+    </a>
     <nav>
       <ul>
         <li><a href="#" class="active">Home</a></li>
@@ -316,17 +310,17 @@
   </header>
 
   <section class="hero">
-    <h1>TECNOLOGIA & INOVAÇÃO</h1>
-    <p class="subtitle">Desenvolvemos soluções tecnológicas sob medida para organizar seu trabalho, automatizar suas vendas e fortalecer o seu negócio ou ministério.</p>
-    <a href="#produtos" class="btn-primary">Conheça Nossos Projetos</a>
+    <h1>Tecnologia que Transforma e Simplifica.</h1>
+    <p class="subtitle">Criamos sistemas e aplicativos intuitivos que organizam sua gestão, automatizam processos e escalam seus resultados. Esqueça a complexidade, foque no que realmente importa.</p>
+    <a href="#produtos" class="btn-primary">Conheça Nossos Sistemas</a>
   </section>
 
   <section id="produtos" class="portfolio-section">
     <div class="container">
-      <div class="section-label">PROJETOS EM DESTAQUE</div>
+      <div class="section-label">SOLUÇÕES EM DESTAQUE</div>
       <div class="section-header">
-        <h2>Nossos estudos de caso</h2>
-        <p>Transformamos ideias em soluções digitais com impacto. Abaixo, veja como nossos sistemas funcionam na prática e ajudam empreendedores e igrejas a crescerem com tecnologia.</p>
+        <h2>Sistemas sob medida para a sua necessidade</h2>
+        <p>Do varejo à gestão eclesiástica, desenvolvemos plataformas robustas, seguras e muito fáceis de usar. Veja na prática como nossas ferramentas vão impulsionar o seu crescimento.</p>
       </div>
 
       <div class="projects-grid">
@@ -337,7 +331,7 @@
           </div>
           <div class="project-info">
             <h3><i class="fa-solid fa-store"></i> Venda Fácil</h3>
-            <p>Seu sistema de gestão e PDV ideal para lojas varejistas. Com o Venda Fácil, você tem um controle rígido de estoque, fluxo de caixa e relatórios visuais que ajudam a alavancar seus lucros de forma inteligente, sem complicação na hora da venda.</p>
+            <p>Frente de caixa (PDV) e gestão de estoque ultrarrápida para o varejo físico. Reduza filas, evite perdas e tenha relatórios precisos para alavancar seus lucros de forma estratégica.</p>
             <a href="venda-facil.html" class="project-link">Ver Detalhes do App</a>
           </div>
         </div>
@@ -348,7 +342,7 @@
           </div>
           <div class="project-info">
             <h3><i class="fa-solid fa-church"></i> Reino Cloud</h3>
-            <p>Sistema de gestão eclesiástica em nuvem completo. Mantenha o controle da parte administrativa, financeira (dízimos e ofertas) e toda a base de membros da sua congregação de forma segura e acessível de qualquer lugar.</p>
+            <p>A plataforma definitiva para a administração da sua igreja. Tenha o controle total da secretaria, aniversariantes, dízimos e ofertas em um ambiente seguro e 100% na nuvem.</p>
             <a href="reino-cloud.html" class="project-link">Ver Detalhes do App</a>
           </div>
         </div>
@@ -359,7 +353,7 @@
           </div>
           <div class="project-info">
             <h3><i class="fa-solid fa-wallet"></i> MeuKumbu</h3>
-            <p>Aplicativo de gestão financeira simples e direto ao ponto. Abandone as planilhas complexas, crie tetos de gastos e saiba exatamente para onde vai o seu dinheiro no final do mês, na palma da sua mão.</p>
+            <p>Gestão financeira pessoal e empresarial sem complicação. Crie orçamentos, defina limites de gastos e saiba exatamente para onde vai o seu dinheiro com gráficos visuais e intuitivos.</p>
             <a href="meu-kumbu.html" class="project-link">Ver Detalhes do App</a>
           </div>
         </div>
@@ -370,7 +364,7 @@
           </div>
           <div class="project-info">
             <h3><i class="fa-solid fa-motorcycle"></i> Pedjá</h3>
-            <p>O sistema de delivery e cardápio digital focado no lucro do pequeno empreendedor. Atenda seus clientes com rapidez, gerencie expedições e pare de pagar taxas absurdas por cada pedido vendido.</p>
+            <p>O aplicativo de delivery próprio que liberta seu restaurante das taxas abusivas. Ofereça um cardápio digital impecável e gerencie seus pedidos com total controle e margem de lucro real.</p>
             <a href="pedja.html" class="project-link">Ver Detalhes do App</a>
           </div>
         </div>
@@ -380,8 +374,10 @@
   </section>
 
   <footer>
-    <a href="index.html" class="logo footer-logo">Sebas<span>tec</span>.</a>
-    <p style="margin-top: 20px; font-size: 0.95rem;">&copy; 2026 Sebastec Soluções Digitais. Espírito Santo, Brasil.</p>
+    <a href="index.html">
+      <img src="logo.png" alt="Sebastec Soluções em Tecnologia" class="footer-img">
+    </a>
+    <p style="font-size: 0.95rem;">&copy; 2026 Sebastec Soluções em Tecnologia. Todos os direitos reservados. Espírito Santo, Brasil.</p>
   </footer>
 
 </body>
