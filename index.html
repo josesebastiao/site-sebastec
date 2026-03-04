@@ -11,7 +11,6 @@
 
   <style>
     :root {
-      /* Azul atualizado para combinar perfeitamente com a logo */
       --primary: #1E4A91; 
       --primary-hover: #143468;
       --bg-white: #ffffff;
@@ -37,32 +36,23 @@
       justify-content: space-between;
       align-items: center;
       padding: 15px 5%;
-      background: var(--bg-white);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       position: sticky;
       top: 0;
       z-index: 100;
-      /* Linha removida daqui! */
     }
 
-    .logo-link {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-    }
-
-    /* Logo flexível: Cresce no PC e diminui no celular */
-    .logo-img {
-      height: clamp(50px, 5vw, 75px); 
-      width: auto;
-      object-fit: contain;
-    }
+    .logo-link { display: flex; align-items: center; text-decoration: none; }
+    .logo-img { height: clamp(40px, 4vw, 55px); width: auto; object-fit: contain; }
 
     nav ul { display: flex; list-style: none; gap: 32px; }
     nav a { text-decoration: none; color: var(--text-gray); font-weight: 600; font-size: 0.95rem; transition: 0.3s; }
     nav a:hover, nav a.active { color: var(--primary); }
 
     .btn-contact {
-      background: var(--primary); color: white; padding: 12px 32px; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: 0.3s;
+      background: var(--primary); color: white; padding: 12px 28px; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: 0.3s;
     }
     .btn-contact:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 8px 15px rgba(30, 74, 145, 0.2); }
 
@@ -78,18 +68,18 @@
       box-shadow: 0 20px 40px rgba(0,0,0,0.15);
     }
 
-    h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; margin-bottom: 24px; font-weight: 800; letter-spacing: -1px; }
-    p.subtitle { font-size: clamp(1.1rem, 2vw, 1.3rem); color: #e5e7eb; max-width: 800px; margin: 0 auto 40px; line-height: 1.6; }
+    h1 { font-size: clamp(2.2rem, 5vw, 4.5rem); line-height: 1.1; margin-bottom: 20px; font-weight: 800; letter-spacing: -1px; }
+    p.subtitle { font-size: clamp(1rem, 2vw, 1.25rem); color: #e5e7eb; max-width: 800px; margin: 0 auto 40px; line-height: 1.6; }
     
-    .hero .btn-primary { background: var(--primary); color: white; padding: 16px 40px; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: 0.3s; display: inline-block; }
+    .hero .btn-primary { background: var(--primary); color: white; padding: 18px 40px; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: 0.3s; display: inline-flex; align-items: center; gap: 10px; }
     .hero .btn-primary:hover { background: var(--primary-hover); transform: scale(1.05); }
 
     /* --- Projetos --- */
     .portfolio-section { padding: 60px 5% 100px; }
     .container { max-width: 1200px; margin: auto; }
-    .section-label { text-align: center; font-weight: 600; color: var(--text-gray); text-transform: uppercase; font-size: 0.85rem; margin-bottom: 10px; }
-    .section-header h2 { text-align: center; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 24px; }
-    .section-header p { text-align: center; color: var(--text-gray); font-size: 1.1rem; max-width: 800px; margin: 0 auto 60px; line-height: 1.6; }
+    .section-label { text-align: center; font-weight: 700; color: var(--text-gray); text-transform: uppercase; font-size: 0.85rem; margin-bottom: 12px; letter-spacing: 1px; }
+    .section-header h2 { text-align: center; font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; margin-bottom: 20px; }
+    .section-header p { text-align: center; color: var(--text-gray); font-size: 1.05rem; max-width: 800px; margin: 0 auto 50px; line-height: 1.6; }
 
     .projects-grid { display: flex; flex-direction: column; gap: 60px; }
     .project-card { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; background: var(--bg-gray); border-radius: 24px; padding: 40px; border: 1px solid var(--border-color); }
@@ -99,24 +89,64 @@
     .video-container { position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
     .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
-    .project-info h3 { font-size: 2.2rem; margin-bottom: 16px; display: flex; align-items: center; font-weight: 800; gap: 12px; }
+    .project-info h3 { font-size: 2rem; margin-bottom: 16px; display: flex; align-items: center; font-weight: 800; gap: 12px; }
     .project-info h3 i { color: var(--primary); }
-    .project-info p { color: var(--text-gray); font-size: 1.1rem; line-height: 1.7; margin-bottom: 30px; }
+    .project-info p { color: var(--text-gray); font-size: 1.05rem; line-height: 1.6; margin-bottom: 30px; }
     
-    .project-link { display: inline-flex; align-items: center; gap: 10px; background: white; color: var(--primary); padding: 12px 28px; border-radius: 999px; text-decoration: none; font-weight: 600; border: 1px solid var(--border-color); transition: 0.3s; }
+    .project-link { display: inline-flex; align-items: center; gap: 10px; background: white; color: var(--primary); padding: 14px 28px; border-radius: 999px; text-decoration: none; font-weight: 600; border: 1px solid var(--border-color); transition: 0.3s; }
     .project-link:hover { background: var(--primary); color: white; border-color: var(--primary); }
 
     /* --- Footer --- */
-    footer { background: var(--bg-gray); border-top: 1px solid var(--border-color); padding: 60px 20px 40px; text-align: center; display: flex; flex-direction: column; align-items: center; }
-    
+    footer { background: var(--bg-gray); border-top: 1px solid var(--border-color); padding: 50px 20px 30px; text-align: center; display: flex; flex-direction: column; align-items: center; }
     .footer-logo-link { display: flex; align-items: center; justify-content: center; margin-bottom: 20px; text-decoration: none; }
-    .footer-logo-img { height: clamp(60px, 6vw, 85px); width: auto; object-fit: contain; }
+    .footer-logo-img { height: clamp(50px, 6vw, 70px); width: auto; object-fit: contain; }
 
-    @media (max-width: 900px) {
+    /* =========================================
+       📱 AJUSTES PODEROSOS PARA MOBILE (CELULAR) 
+       ========================================= */
+    @media (max-width: 768px) {
+      /* Cabeçalho mais inteligente */
+      header { padding: 12px 15px; }
       nav ul { display: none; }
-      .project-card, .project-card:nth-child(even) { grid-template-columns: 1fr; direction: ltr; padding: 20px; }
-      .project-info h3 { font-size: 1.8rem; }
-      .hero { padding: 100px 20px; border-radius: 20px; margin: 10px; }
+      .logo-img { height: 32px; }
+      .btn-contact { padding: 10px 18px; font-size: 0.85rem; }
+
+      /* Banner principal aproveitando a tela */
+      .hero { 
+        padding: 60px 15px; 
+        margin: 10px 10px 40px; 
+        border-radius: 24px; 
+      }
+      h1 { font-size: 2rem; margin-bottom: 15px; }
+      p.subtitle { font-size: 1rem; margin-bottom: 30px; padding: 0 10px; }
+      
+      /* Botão full-width no celular (Estilo App) */
+      .hero .btn-primary { 
+        width: 100%; 
+        justify-content: center; 
+        padding: 16px 20px; 
+      }
+
+      /* Projetos mais compactos e diretos */
+      .portfolio-section { padding: 40px 15px 80px; }
+      .projects-grid { gap: 30px; }
+      .project-card, .project-card:nth-child(even) { 
+        grid-template-columns: 1fr; 
+        direction: ltr; 
+        padding: 20px; 
+        gap: 20px;
+        border-radius: 20px;
+      }
+      
+      .project-info h3 { font-size: 1.6rem; margin-bottom: 10px; }
+      .project-info p { font-size: 0.95rem; margin-bottom: 20px; }
+      
+      /* Botões dos projetos full-width no celular */
+      .project-link { 
+        width: 100%; 
+        justify-content: center; 
+        padding: 14px 20px; 
+      }
     }
   </style>
 </head>
