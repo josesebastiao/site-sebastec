@@ -5,25 +5,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sebastec | Soluções Digitais</title>
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232563eb'/><text x='50' y='54' font-family='sans-serif' font-size='65' fill='white' dominant-baseline='middle' text-anchor='middle' font-weight='800'>S</text></svg>">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     :root {
       --primary: #2563eb;
-      --secondary: #4f46e5;
-      --accent: #0ea5e9;
-      --bg-light: #ffffff;
-      --bg-alt: #f8fafc;
-      --bg-card: #ffffff;
-      --text-main: #0f172a;
-      --text-gray: #475569;
-      --border-color: #e2e8f0;
+      --primary-hover: #1d4ed8;
+      --bg-white: #ffffff;
+      --bg-gray: #f8fafc;
+      --text-main: #111827;
+      --text-gray: #4b5563;
+      --border-color: #e5e7eb;
     }
 
     * {
@@ -33,52 +31,31 @@
     }
 
     body {
-      background-color: var(--bg-light);
+      background-color: var(--bg-gray);
       color: var(--text-main);
       font-family: 'Inter', sans-serif;
       overflow-x: hidden;
     }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    .logo {
+    h1, h2, h3, h4, .logo {
       font-family: 'Outfit', sans-serif;
     }
 
-    /* Background Pattern - Light Clean Tech Vibe */
-    .bg-pattern {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
-      background-size: 32px 32px;
-      z-index: -1;
-      opacity: 0.8;
-    }
-
-    /* Header */
+    /* --- Header Clean --- */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 5%;
-      max-width: 1400px;
-      margin: auto;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: var(--bg-white);
       position: sticky;
       top: 0;
       z-index: 100;
-      border-bottom: 1px solid var(--border-color);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
     }
 
     .logo {
-      font-size: 26px;
+      font-size: 28px;
       font-weight: 800;
       letter-spacing: -0.5px;
       color: var(--text-main);
@@ -89,30 +66,31 @@
       color: var(--primary);
     }
 
-    .header-actions {
+    nav ul {
       display: flex;
-      align-items: center;
-      gap: 20px;
+      list-style: none;
+      gap: 32px;
     }
 
-    .btn-youtube {
+    nav a {
+      text-decoration: none;
       color: var(--text-gray);
-      font-size: 1.4rem;
-      transition: 0.3s;
-      display: flex;
-      align-items: center;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s;
     }
 
-    .btn-youtube:hover {
-      color: #ff0000;
-      transform: scale(1.1);
+    nav a:hover, nav a.active {
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 4px;
     }
 
     .btn-contact {
-      background: var(--text-main);
+      background: var(--primary);
       color: white;
-      padding: 10px 28px;
-      border-radius: 8px;
+      padding: 12px 32px;
+      border-radius: 999px; /* Formato pílula igual Ndapitila */
       text-decoration: none;
       font-weight: 600;
       font-size: 0.95rem;
@@ -120,30 +98,18 @@
     }
 
     .btn-contact:hover {
-      background: var(--primary);
+      background: var(--primary-hover);
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+      box-shadow: 0 8px 15px rgba(37, 99, 235, 0.2);
     }
 
-    /* Hero Section */
+    /* --- Hero Section --- */
     .hero {
-      text-align: center;
-      padding: 120px 20px 80px;
       position: relative;
-    }
-
-    .hero-label {
-      display: inline-block;
-      padding: 8px 16px;
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--primary);
-      margin-bottom: 24px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      text-align: center;
+      padding: 160px 20px;
+      background: linear-gradient(rgba(17, 24, 39, 0.75), rgba(17, 24, 39, 0.85)), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      color: white;
     }
 
     h1 {
@@ -154,45 +120,36 @@
       letter-spacing: -1.5px;
     }
 
-    .highlight {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
     p.subtitle {
-      font-size: clamp(1.05rem, 2vw, 1.25rem);
-      color: var(--text-gray);
-      max-width: 700px;
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      color: #e5e7eb;
+      max-width: 800px;
       margin: 0 auto 40px;
       line-height: 1.6;
       font-weight: 400;
     }
 
-    .hero-actions .btn-primary {
+    .hero .btn-primary {
       display: inline-flex;
-      align-items: center;
-      gap: 10px;
       background: var(--primary);
       color: white;
-      padding: 14px 32px;
-      border-radius: 8px;
+      padding: 16px 40px;
+      border-radius: 999px;
       text-decoration: none;
       font-weight: 600;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+      font-size: 1.1rem;
+      transition: 0.3s;
     }
 
-    .hero-actions .btn-primary:hover {
-      background: var(--secondary);
-      transform: translateY(-2px);
+    .hero .btn-primary:hover {
+      background: var(--primary-hover);
+      transform: scale(1.05);
     }
 
-    /* Portfolio Grid */
+    /* --- Projetos em Destaque (Vídeos) --- */
     .portfolio-section {
-      background: var(--bg-alt);
+      background: var(--bg-white);
       padding: 100px 5%;
-      border-top: 1px solid var(--border-color);
     }
 
     .container {
@@ -200,310 +157,232 @@
       margin: auto;
     }
 
-    .section-header {
+    .section-label {
       text-align: center;
-      margin-bottom: 60px;
+      font-weight: 600;
+      color: var(--text-gray);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.85rem;
+      margin-bottom: 10px;
     }
 
     .section-header h2 {
-      font-size: clamp(2rem, 4vw, 2.5rem);
+      text-align: center;
+      font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 800;
-      margin-bottom: 16px;
-      letter-spacing: -1px;
+      margin-bottom: 24px;
+      color: var(--text-main);
     }
 
     .section-header p {
+      text-align: center;
       color: var(--text-gray);
       font-size: 1.1rem;
-      max-width: 600px;
-      margin: auto;
+      max-width: 800px;
+      margin: 0 auto 60px;
+      line-height: 1.6;
     }
 
     .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
     }
 
     .project-card {
-      background: var(--bg-card);
-      border-radius: 20px;
-      padding: 40px 32px;
-      border: 1px solid var(--border-color);
-      transition: all 0.4s ease;
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-    }
-
-    .project-card:hover {
-      border-color: var(--primary);
-      transform: translateY(-6px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-    }
-
-    .icon-box {
-      width: 60px;
-      height: 60px;
-      background: #eff6ff;
-      border-radius: 14px;
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
       align-items: center;
-      justify-content: center;
-      color: var(--primary);
-      font-size: 1.6rem;
-      margin-bottom: 24px;
-      transition: 0.3s;
+      background: var(--bg-gray);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
     }
 
-    .project-card:hover .icon-box {
-      background: var(--primary);
-      color: white;
-      transform: scale(1.05) rotate(-5deg);
-      border-radius: 18px;
+    .project-card:nth-child(even) {
+      grid-template-columns: 1fr 1fr;
+      direction: rtl; /* Inverte o lado da imagem/video no CSS */
+    }
+
+    .project-card:nth-child(even) > * {
+      direction: ltr; /* Volta o texto pro lado certo */
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* Proporção 16:9 */
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
     }
 
     .project-info h3 {
-      font-size: 1.5rem;
-      margin-bottom: 12px;
-      font-weight: 700;
+      font-size: 2.2rem;
+      margin-bottom: 16px;
       color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .project-info h3 i {
+      color: var(--primary);
     }
 
     .project-info p {
       color: var(--text-gray);
-      font-size: 0.95rem;
-      line-height: 1.6;
-      margin-bottom: 32px;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 30px;
     }
 
     .project-link {
-      color: var(--primary);
-      font-weight: 600;
-      font-size: 0.95rem;
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+      background: var(--bg-white);
+      color: var(--primary);
+      padding: 12px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid var(--border-color);
       transition: 0.3s;
     }
 
-    .project-card:hover .project-link {
-      gap: 12px;
-      color: var(--secondary);
+    .project-link:hover {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
     }
 
-    /* Footer */
+    /* --- Footer --- */
     footer {
-      background: var(--bg-card);
-      border-top: 1px solid var(--border-color);
-      padding: 60px 20px 40px;
+      background: var(--text-main);
+      padding: 60px 20px;
       text-align: center;
-      color: var(--text-gray);
+      color: #9ca3af;
     }
 
     .footer-logo {
-      font-weight: 800;
-      font-family: 'Outfit', sans-serif;
-      color: var(--text-main);
-      font-size: 1.5rem;
-      margin-bottom: 16px;
-      display: inline-block;
-      text-decoration: none;
+      color: white;
+      font-size: 2rem;
     }
 
     .footer-logo span {
       color: var(--primary);
     }
 
-    .footer-social {
-      margin-top: 24px;
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-    }
-
-    .footer-social a {
-      color: var(--text-gray);
-      font-size: 1.4rem;
-      transition: 0.3s;
-      width: 44px;
-      height: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: var(--bg-alt);
-      border: 1px solid var(--border-color);
-      text-decoration: none;
-    }
-
-    .footer-social a:hover {
-      transform: translateY(-3px);
-      background: white;
-    }
-
-    .footer-social a.youtube:hover {
-      color: #ff0000;
-      border-color: #ff0000;
-    }
-
-    .footer-social a.whatsapp:hover {
-      color: #22c55e;
-      border-color: #22c55e;
-    }
-
-    .footer-text {
-      margin-top: 32px;
-      font-size: 0.95rem;
-    }
-
-    .footer-text span {
-      display: block;
-      margin-top: 8px;
-      font-size: 0.85rem;
-      opacity: 0.8;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        padding: 16px 5%;
+    @media (max-width: 900px) {
+      nav ul {
+        display: none; /* Esconde menu no mobile para simplificar */
       }
-
-      .btn-contact {
-        padding: 8px 16px;
-        font-size: 0.85rem;
-      }
-
-      .btn-youtube {
-        display: none;
-      }
-
-      .hero {
-        padding: 80px 20px 60px;
-      }
-
-      .projects-grid {
+      .project-card, .project-card:nth-child(even) {
         grid-template-columns: 1fr;
-        gap: 20px;
+        direction: ltr;
+        padding: 20px;
       }
-
-      .project-card {
-        padding: 32px 24px;
+      .project-info h3 {
+        font-size: 1.8rem;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="bg-pattern"></div>
 
   <header>
     <a href="index.html" class="logo">Sebas<span>tec</span>.</a>
-    <div class="header-actions">
-      <a href="https://www.youtube.com/@sebastectecnologia4547" target="_blank" class="btn-youtube"
-        title="Canal YouTube"><i class="fa-brands fa-youtube"></i></a>
-      <a href="https://wa.me/5527999553035?text=Olá,%20vi%20o%20site%20e%20gostaria%20de%20conversar!"
-        class="btn-contact" target="_blank">Fale Conosco</a>
-    </div>
+    <nav>
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#produtos">Sistemas</a></li>
+        <li><a href="https://www.youtube.com/@sebastectecnologia4547" target="_blank">YouTube</a></li>
+      </ul>
+    </nav>
+    <a href="https://wa.me/5527999553035?text=Olá,%20vi%20o%20site%20e%20gostaria%20de%20conversar!" class="btn-contact" target="_blank">Fale Conosco</a>
   </header>
 
   <section class="hero">
-    <div class="hero-label">Nova Era da Gestão</div>
-    <h1>Tecnologia que <br><span class="highlight">Impulsiona seu Negócio.</span></h1>
-    <p class="subtitle">Sistemas e aplicativos projetados para serem práticos e diretos. Pare de sofrer com ferramentas
-      complexas: organize seu trabalho e escale seus lucros de forma inteligente.</p>
-    <div class="hero-actions">
-      <a href="#produtos" class="btn-primary">Ver Catálogo de Soluções <i class="fa-solid fa-arrow-down"></i></a>
-    </div>
+    <h1>TECNOLOGIA & INOVAÇÃO</h1>
+    <p class="subtitle">Desenvolvemos soluções tecnológicas sob medida para organizar seu trabalho, automatizar suas vendas e fortalecer o seu negócio ou ministério.</p>
+    <a href="#produtos" class="btn-primary">Conheça Nossos Projetos</a>
   </section>
 
   <section id="produtos" class="portfolio-section">
     <div class="container">
+      <div class="section-label">PROJETOS EM DESTAQUE</div>
       <div class="section-header">
-        <h2>Conheça Nossos Sistemas</h2>
-        <p>Desenvolvemos ferramentas com excelência para segmentos empresariais, comerciais e da comunidade.</p>
+        <h2>Nossos estudos de caso</h2>
+        <p>Transformamos ideias em soluções digitais com impacto. Abaixo, veja como nossos sistemas funcionam na prática e ajudam empreendedores e igrejas a crescerem com tecnologia.</p>
       </div>
 
       <div class="projects-grid">
-        <a href="reino-cloud.html" class="project-card">
-          <div>
-            <div class="icon-box"><i class="fa-solid fa-church"></i></div>
-            <div class="project-info">
-              <h3>Reino Cloud</h3>
-              <p>Sistema de gestão eclesiástica completo. Controle toda a parte administrativa financeira e membresia da
-                sua igreja com facilidade e organização.</p>
-            </div>
+        
+        <div class="project-card">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Demonstração Venda Fácil" allowfullscreen></iframe>
           </div>
-          <div class="project-link">Ver detalhes e Acessar <i class="fa-solid fa-arrow-right"></i></div>
-        </a>
+          <div class="project-info">
+            <h3><i class="fa-solid fa-store"></i> Venda Fácil</h3>
+            <p>Seu sistema de gestão e PDV ideal para lojas varejistas. Com o Venda Fácil, você tem um controle rígido de estoque, fluxo de caixa e relatórios visuais que ajudam a alavancar seus lucros de forma inteligente, sem complicação na hora da venda.</p>
+            <a href="venda-facil.html" class="project-link">Ver Detalhes do App</a>
+          </div>
+        </div>
 
-        <a href="meu-kumbu.html" class="project-card">
-          <div>
-            <div class="icon-box"><i class="fa-solid fa-wallet"></i></div>
-            <div class="project-info">
-              <h3>MeuKumbu</h3>
-              <p>Aplicativo de gestão financeira simples e prático. Deixe a planilha de lado e tome conta do seu
-                dinheiro em qualquer lugar, de forma clara.</p>
-            </div>
+        <div class="project-card">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Demonstração Reino Cloud" allowfullscreen></iframe>
           </div>
-          <div class="project-link">Ver detalhes e Acessar <i class="fa-solid fa-arrow-right"></i></div>
-        </a>
+          <div class="project-info">
+            <h3><i class="fa-solid fa-church"></i> Reino Cloud</h3>
+            <p>Sistema de gestão eclesiástica em nuvem completo. Mantenha o controle da parte administrativa, financeira (dízimos e ofertas) e toda a base de membros da sua congregação de forma segura e acessível de qualquer lugar.</p>
+            <a href="reino-cloud.html" class="project-link">Ver Detalhes do App</a>
+          </div>
+        </div>
 
-        <a href="pedja.html" class="project-card">
-          <div>
-            <div class="icon-box"><i class="fa-solid fa-motorcycle"></i></div>
-            <div class="project-info">
-              <h3>Pedjá</h3>
-              <p>O sistema de delivery especializado para pequenos restaurantes e lanchonetes. Atenda seus clientes com
-                rapidez, sem taxas absurdas.</p>
-            </div>
+        <div class="project-card">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Demonstração MeuKumbu" allowfullscreen></iframe>
           </div>
-          <div class="project-link">Ver detalhes e Acessar <i class="fa-solid fa-arrow-right"></i></div>
-        </a>
+          <div class="project-info">
+            <h3><i class="fa-solid fa-wallet"></i> MeuKumbu</h3>
+            <p>Aplicativo de gestão financeira simples e direto ao ponto. Abandone as planilhas complexas, crie tetos de gastos e saiba exatamente para onde vai o seu dinheiro no final do mês, na palma da sua mão.</p>
+            <a href="meu-kumbu.html" class="project-link">Ver Detalhes do App</a>
+          </div>
+        </div>
 
-        <a href="venda-facil.html" class="project-card">
-          <div>
-            <div class="icon-box"><i class="fa-solid fa-store"></i></div>
-            <div class="project-info">
-              <h3>Venda Fácil</h3>
-              <p>Seu sistema de gestão e PDV ideal para lojas varejistas. Controle rígido de estoque, fluxo de caixa e
-                vendas para alavancar lucros.</p>
-            </div>
+        <div class="project-card">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Demonstração Pedjá" allowfullscreen></iframe>
           </div>
-          <div class="project-link">Ver detalhes e Acessar <i class="fa-solid fa-arrow-right"></i></div>
-        </a>
+          <div class="project-info">
+            <h3><i class="fa-solid fa-motorcycle"></i> Pedjá</h3>
+            <p>O sistema de delivery e cardápio digital focado no lucro do pequeno empreendedor. Atenda seus clientes com rapidez, gerencie expedições e pare de pagar taxas absurdas por cada pedido vendido.</p>
+            <a href="pedja.html" class="project-link">Ver Detalhes do App</a>
+          </div>
+        </div>
 
-        <a href="venda-certa.html" class="project-card">
-          <div>
-            <div class="icon-box"><i class="fa-solid fa-calculator"></i></div>
-            <div class="project-info">
-              <h3>VendaCerta 2026</h3>
-              <p>Calculadora de precificação avançada para vendas em Marketplaces. Descubra seus custos exatos e garanta
-                seu lucro real.</p>
-            </div>
-          </div>
-          <div class="project-link">Ver detalhes e Acessar <i class="fa-solid fa-arrow-right"></i></div>
-        </a>
       </div>
     </div>
   </section>
 
   <footer>
-    <a href="index.html" style="text-decoration:none;"><span class="footer-logo">Sebas<span>tec</span>.</span></a>
-    <div class="footer-social">
-      <a href="https://www.youtube.com/@sebastectecnologia4547" target="_blank" class="youtube" title="YouTube"><i
-          class="fa-brands fa-youtube"></i></a>
-      <a href="https://wa.me/5527999553035" target="_blank" class="whatsapp" title="WhatsApp"><i
-          class="fa-brands fa-whatsapp"></i></a>
-    </div>
-    <div class="footer-text">
-      &copy; 2026 Sebastec Soluções Digitais.
-      <span>Espírito Santo, Brasil</span>
-    </div>
+    <a href="index.html" class="logo footer-logo">Sebas<span>tec</span>.</a>
+    <p style="margin-top: 20px; font-size: 0.95rem;">&copy; 2026 Sebastec Soluções Digitais. Espírito Santo, Brasil.</p>
   </footer>
-</body>
 
+</body>
 </html>
