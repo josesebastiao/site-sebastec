@@ -8,9 +8,8 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #1e3a8a; /* Fundo azul base */ }
+        body { font-family: 'Inter', sans-serif; background-color: #1e3a8a; }
         
-        /* Scrollbar customizada e fina */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f5f9; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
@@ -37,70 +36,81 @@
     </nav>
 
     <section class="fixed top-0 left-0 w-full h-screen z-0 flex flex-col items-center justify-start pt-32 md:pt-40 px-6 bg-[#1e3a8a] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-700 via-blue-900 to-slate-900 text-center">
-        
         <div class="max-w-4xl mx-auto">
             <div class="inline-block bg-white/10 border border-white/20 text-blue-100 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-8 backdrop-blur-md shadow-lg">
                 Plataforma de Gestão Eclesiástica
             </div>
-            
             <h1 class="text-5xl md:text-7xl font-black text-white leading-tight mb-8 tracking-tight drop-shadow-2xl">
                 A igreja do futuro <br>na palma da sua mão.
             </h1>
-            
             <p class="text-lg md:text-2xl text-blue-100 mb-10 max-w-2xl mx-auto font-medium opacity-90 drop-shadow-md">
                 Chega de planilhas e papéis perdidos. Tenha a tesouraria, a secretaria e seus membros conectados em um só aplicativo.
             </p>
         </div>
-
     </section>
 
-    <main class="relative z-10 w-full mt-[85vh] bg-slate-50 rounded-t-[3rem] shadow-[0_-20px_60px_rgba(0,0,0,0.4)] pb-20 border-t border-white/50">
+    <main class="relative z-10 w-full mt-[85vh] shadow-[0_-20px_60px_rgba(0,0,0,0.4)] border-t border-white/50 rounded-t-[3rem] flex flex-col overflow-hidden bg-slate-50">
         
-        <div class="w-full flex justify-center pt-4 pb-8">
-            <div class="w-16 h-1.5 bg-gray-300 rounded-full"></div>
-        </div>
-
-        <div class="max-w-6xl mx-auto px-6">
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 -mt-6 relative z-20">
-                
-                <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 hover:-translate-y-2 transition duration-300 group">
-                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition shadow-inner">
-                        <i data-lucide="users" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Secretaria Inteligente</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">
-                        Cadastro rápido de membros, controle de visitantes, relatórios automáticos de aniversariantes e geração de Carteirinhas digitais.
-                    </p>
-                </div>
-
-                <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 hover:-translate-y-2 transition duration-300 group">
-                    <div class="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition shadow-inner">
-                        <i data-lucide="trending-up" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Tesouraria Blindada</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">
-                        Controle total de dízimos e despesas com gráficos visuais. Destaque: <b>Importe planilhas de Excel</b> inteiras em apenas 1 clique!
-                    </p>
-                </div>
-
-                <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 hover:-translate-y-2 transition duration-300 group">
-                    <div class="w-16 h-16 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-purple-600 group-hover:text-white transition shadow-inner">
-                        <i data-lucide="smartphone" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">App do Membro</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">
-                        Cada membro tem seu próprio login para ver a agenda, enviar pedidos de oração, ler o mural de avisos e receber as escalas de departamentos.
-                    </p>
-                </div>
+        <section class="w-full pt-4 pb-24 px-6 relative bg-slate-50">
+            <div class="w-full flex justify-center pb-8">
+                <div class="w-16 h-1.5 bg-gray-300 rounded-full"></div>
             </div>
 
-            <div class="mt-32 text-center bg-white p-8 md:p-12 rounded-[3rem] shadow-xl border border-gray-100">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">Veja como é fácil usar</h2>
-                <p class="text-slate-500 mb-10 max-w-2xl mx-auto text-lg">Dê o play e faça um tour rápido pelo painel administrativo da ReinoCloud.</p>
-                
-                <div class="relative w-full max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl bg-black aspect-video flex items-center justify-center group border border-gray-200">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 -mt-6 relative z-20">
                     
+                    <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 hover:-translate-y-2 transition duration-300 group flex flex-col">
+                        <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition shadow-inner shrink-0">
+                            <i data-lucide="users" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Secretaria</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed flex-1">
+                            Cadastro rápido de membros, relatórios automáticos de aniversariantes e geração de Carteirinhas digitais com QR Code.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 hover:-translate-y-2 transition duration-300 group flex flex-col">
+                        <div class="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition shadow-inner shrink-0">
+                            <i data-lucide="dollar-sign" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Tesouraria</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed flex-1">
+                            Controle total de dízimos e despesas com gráficos. Destaque: <b>Importe planilhas de Excel</b> inteiras em apenas 1 clique!
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 hover:-translate-y-2 transition duration-300 group flex flex-col">
+                        <div class="w-16 h-16 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-purple-600 group-hover:text-white transition shadow-inner shrink-0">
+                            <i data-lucide="smartphone" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">App do Membro</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed flex-1">
+                            Cada membro tem seu próprio login para ver a agenda, ler o mural de avisos e receber escalas de departamentos.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 hover:-translate-y-2 transition duration-300 group flex flex-col">
+                        <div class="w-16 h-16 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-orange-500 group-hover:text-white transition shadow-inner shrink-0">
+                            <i data-lucide="wifi-off" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Funciona Offline</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed flex-1">
+                            Sem internet? Sem problemas. O sistema permite acesso aos dados e sincroniza tudo automaticamente quando a conexão voltar.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="w-full bg-white py-24 px-6 border-y border-gray-200">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">Veja como é fácil usar</h2>
+                    <p class="text-slate-500 max-w-2xl mx-auto text-lg">Dê o play e faça um tour rápido pelo painel administrativo da ReinoCloud.</p>
+                </div>
+                
+                <div class="relative w-full max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl bg-black aspect-video flex items-center justify-center group border border-gray-100">
                     <div class="absolute inset-0 flex flex-col items-center justify-center z-10 bg-slate-900/20 group-hover:bg-slate-900/40 transition cursor-pointer">
                         <div class="w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(37,99,235,0.6)] group-hover:scale-110 transition duration-300">
                             <i data-lucide="play" fill="currentColor" class="w-10 h-10 text-white ml-2"></i>
@@ -109,16 +119,20 @@
                     <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2070" alt="Demo ReinoCloud" class="w-full h-full object-cover opacity-80" />
                 </div>
             </div>
+        </section>
 
-            <div id="planos" class="mt-32">
+        <section id="planos" class="w-full bg-slate-50 py-24 px-6 relative">
+            <div class="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:20px_20px] opacity-40"></div>
+            
+            <div class="max-w-6xl mx-auto relative z-10">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">Planos acessíveis para sua Igreja</h2>
-                    <p class="text-slate-500 text-lg max-w-xl mx-auto">Escolha o tamanho do seu rebanho. O sistema completo já está incluso em todos os planos, sem taxas extras.</p>
+                    <p class="text-slate-500 text-lg max-w-xl mx-auto bg-slate-50 px-2">Escolha o tamanho do seu rebanho. O sistema completo já está incluso em todos os planos, sem taxas extras.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                     
-                    <div class="bg-white rounded-3xl p-8 shadow-md border border-gray-200 hover:shadow-xl transition flex flex-col">
+                    <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-sm border border-gray-200 hover:shadow-xl transition flex flex-col">
                         <h3 class="text-xl font-bold text-slate-800 mb-2">Congregação</h3>
                         <p class="text-sm text-slate-500 mb-6">Para igrejas em fase de crescimento inicial.</p>
                         <div class="mb-6 pb-6 border-b border-gray-100">
@@ -136,7 +150,7 @@
                             <li class="flex items-center gap-3 text-sm text-slate-700 font-medium"><i data-lucide="check" class="text-emerald-500 w-5 h-5"></i> App do Membro Liberado</li>
                             <li class="flex items-center gap-3 text-sm text-slate-700 font-medium"><i data-lucide="check" class="text-emerald-500 w-5 h-5"></i> Suporte via WhatsApp</li>
                         </ul>
-                        <a href="https://wa.me/SEUNUMERO" target="_blank" class="w-full py-3 rounded-xl border-2 border-slate-200 text-slate-700 font-bold hover:border-blue-600 hover:text-blue-600 transition block text-center">Assinar Plano</a>
+                        <a href="https://wa.me/SEUNUMERO" target="_blank" class="w-full py-3 rounded-xl border-2 border-slate-200 text-slate-700 font-bold hover:border-blue-600 hover:text-blue-600 transition block text-center bg-white">Assinar Plano</a>
                     </div>
 
                     <div class="bg-blue-900 rounded-3xl p-8 shadow-2xl shadow-blue-900/30 border border-blue-700 flex flex-col relative transform md:-translate-y-4">
@@ -163,7 +177,7 @@
                         <a href="https://wa.me/SEUNUMERO" target="_blank" class="w-full py-4 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-500 shadow-lg shadow-blue-900/50 transition block text-center text-lg">Assinar Plano</a>
                     </div>
 
-                    <div class="bg-white rounded-3xl p-8 shadow-md border border-gray-200 hover:shadow-xl transition flex flex-col">
+                    <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-sm border border-gray-200 hover:shadow-xl transition flex flex-col">
                         <h3 class="text-xl font-bold text-slate-800 mb-2">Ministério</h3>
                         <p class="text-sm text-slate-500 mb-6">Para igrejas com múltiplas congregações e grande volume.</p>
                         <div class="mb-6 pb-6 border-b border-gray-100 mt-2">
@@ -175,21 +189,30 @@
                             <li class="flex items-center gap-3 text-sm text-slate-700 font-medium"><i data-lucide="check" class="text-emerald-500 w-5 h-5"></i> Treinamento com a Liderança</li>
                             <li class="flex items-center gap-3 text-sm text-slate-700 font-medium"><i data-lucide="check" class="text-emerald-500 w-5 h-5"></i> Backup Dedicado</li>
                         </ul>
-                        <a href="https://wa.me/SEUNUMERO" target="_blank" class="w-full py-3 rounded-xl border-2 border-slate-200 text-slate-700 font-bold hover:border-slate-800 hover:text-slate-800 transition block text-center">Falar com Consultor</a>
+                        <a href="https://wa.me/SEUNUMERO" target="_blank" class="w-full py-3 rounded-xl border-2 border-slate-200 text-slate-700 font-bold hover:border-slate-800 hover:text-slate-800 transition block text-center bg-white">Falar com Consultor</a>
                     </div>
 
                 </div>
             </div>
-            
-            <br><br><br>
-        </div>
+        </section>
+
     </main>
 
+    <footer class="bg-[#0f172a] py-8 text-center relative z-20">
+        <div class="flex items-center justify-center gap-2 mb-2 text-white">
+            <svg viewBox="0 0 24 24" class="w-5 h-5 opacity-50">
+                <path d="M17.5 19C19.9853 19 22 16.9853 22 14.5C22 12.1325 20.1793 10.1948 17.8595 10.0213C17.4116 7.1856 15.2255 5 12.5 5C9.77451 5 7.58838 7.1856 7.14046 10.0213C4.82069 10.1948 3 12.1325 3 14.5C3 16.9853 5.01472 19 7.5 19H17.5Z" fill="#ffffff" />
+                <polygon points="12,8 13,11 16,11 13.5,13 14.5,16 12,14 9.5,16 10.5,13 8,11 11,11" fill="#2563eb"/>
+            </svg>
+            <span class="font-bold text-lg opacity-80">ReinoCloud</span>
+        </div>
+        <p class="text-slate-500 text-xs">© 2026 ReinoCloud. Sistema de Gestão para Igrejas.</p>
+    </footer>
+
     <script>
-        // Inicializa os ícones
         lucide.createIcons();
 
-        // Efeito do Menu: Escurece a barra e muda a cor da logo ao rolar
+        // Efeito Menu Scroll
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
             const logoText = document.getElementById('nav-logo-text');
