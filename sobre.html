@@ -1,225 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sobre Nós | Sebastec Soluções em Tecnologia</title>
-  
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231E4A91'/><text x='50' y='55' font-family='Arial, sans-serif' font-size='68' fill='white' dominant-baseline='middle' text-anchor='middle' font-weight='800'>S</text></svg>">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <style>
-    :root {
-      --primary: #1E4A91; 
-      --primary-hover: #143468;
-      --bg-white: #ffffff;
-      --bg-gray: #f8fafc;
-      --text-main: #111827;
-      --text-gray: #4b5563;
-      --border-color: #e5e7eb;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      background-color: var(--bg-white);
-      color: var(--text-main);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* --- Header --- */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 5%;
-      background: var(--bg-white);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .logo-link { display: flex; align-items: center; text-decoration: none; }
-    .logo-img { height: clamp(40px, 4vw, 55px); width: auto; object-fit: contain; }
-
-    nav ul { display: flex; list-style: none; gap: 32px; }
-    nav a { text-decoration: none; color: var(--text-gray); font-weight: 600; font-size: 0.95rem; transition: 0.3s; }
-    nav a:hover, nav a.active { color: var(--primary); }
-
-    .btn-contact {
-      background: var(--primary); color: white; padding: 12px 28px; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: 0.3s;
-    }
-    .btn-contact:hover { background: var(--primary-hover); transform: translateY(-2px); }
-
-    /* =========================================
-       BLOCO ÚNICO: SOBRE E EQUIPE
-       ========================================= */
-    .master-block {
-      background: linear-gradient(135deg, #0b1120 0%, #111827 100%);
-      padding: 100px 5% 120px;
-      color: white;
-      width: 100%;
-    }
-
-    .master-container {
-      max-width: 1300px;
-      margin: auto;
-    }
-
-    /* Topo do Bloco: Título e Botão */
-    .master-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 40px;
-      margin-bottom: 60px;
-    }
-
-    .master-title { max-width: 800px; }
-    .master-title h1 { 
-      font-size: clamp(2.5rem, 5vw, 4rem); 
-      line-height: 1.1; 
-      font-weight: 800; 
-      margin-bottom: 24px;
-      color: white;
-      letter-spacing: -1px;
-    }
-
-    .master-title p { 
-      font-size: 1.15rem; 
-      line-height: 1.8; 
-      color: #cbd5e1; 
-      margin-bottom: 20px;
-    }
-
-    /* Botão Estilo Ndapitila (Branco) */
-    .btn-white {
-      background: white;
-      color: var(--text-main);
-      padding: 16px 36px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.05rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      transition: 0.3s;
-      white-space: nowrap;
-    }
-    .btn-white:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    }
-
-    /* Grid da Equipe */
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 40px;
-      margin-top: 60px;
-    }
-
-    .team-card { text-align: center; }
-    
-    /* Fundo da Foto */
-    .team-photo-box {
-      background-color: var(--primary); 
-      border-radius: 30px;
-      aspect-ratio: 4 / 5; /* Mantém a proporção do retrato */
-      margin-bottom: 30px;
-      overflow: hidden;
-      display: flex;
-      align-items: center; /* Centraliza a foto verticalmente */
-      justify-content: center;
-      position: relative;
-    }
-
-    .team-photo-box img {
-      width: 100%;
-      height: 100%; /* Corrigido de 95% para 100% para remover a faixa azul */
-      object-fit: cover;
-      object-position: center; /* Mantém o rosto centralizado */
-      transition: 0.4s;
-    }
-    .team-card:hover .team-photo-box img { transform: scale(1.05); }
-
-    /* Textos da Equipe */
-    .team-info h3 { 
-      font-size: 1.6rem; 
-      font-weight: 700; 
-      margin-bottom: 5px; 
-      color: white; 
-    }
-    .team-info p { 
-      color: #94a3b8; 
-      font-weight: 500; 
-      margin-bottom: 20px; 
-      font-size: 1rem; 
-    }
-
-    /* Redes Sociais Brancas */
-    .team-social { display: flex; justify-content: center; gap: 15px; }
-    .team-social a {
-      width: 40px; height: 40px; 
-      background: white; 
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--text-main); 
-      text-decoration: none; 
-      transition: 0.3s;
-      font-size: 1.1rem;
-    }
-    .team-social a:hover { background: var(--primary); color: white; }
-
-    /* --- Footer --- */
-    footer { background: var(--bg-white); border-top: 1px solid var(--border-color); padding: 50px 20px 30px; text-align: center; display: flex; flex-direction: column; align-items: center; }
-    .footer-logo-link { display: flex; align-items: center; justify-content: center; margin-bottom: 20px; text-decoration: none; }
-    .footer-logo-img { height: clamp(50px, 6vw, 70px); width: auto; object-fit: contain; }
-
-    /* --- Mobile --- */
-    @media (max-width: 900px) {
-      .master-header { flex-direction: column; }
-      .btn-white { width: 100%; justify-content: center; }
-    }
-
-    @media (max-width: 768px) {
-      header { padding: 12px 15px; }
-      nav ul { display: none; }
-      .btn-contact { padding: 10px 18px; font-size: 0.85rem; }
-
-      .master-block { padding: 60px 20px 80px; }
-      .master-title h1 { font-size: 2.2rem; }
-      
-      .team-grid { grid-template-columns: 1fr; gap: 60px; }
-      .team-photo-box { aspect-ratio: 1 / 1; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
   <header>
-    <a href="index.html" class="logo-link">
-      <img src="logo.png" alt="Sebastec Soluções" class="logo-img">
-    </a>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#produtos">Sistemas</a></li>
-        <li><a href="sobre.html" class="active">Sobre</a></li>
-        <li><a href="https://www.youtube.com/@sebastectecnologia4547" target="_blank">YouTube</a></li>
-      </ul>
-    </nav>
-    <a href="https://wa.me/5527999553035" class="btn-contact" target="_blank">Fale Conosco</a>
+    <div class="header-left">
+      <a href="index.html" class="logo-link"><img src="logo.png" alt="Sebastec Soluções" class="logo-img"></a>
+      <nav class="desktop-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#produtos">Sistemas</a></li>
+          <li><a href="sobre.html" class="active">Sobre</a></li>
+          <li><a href="https://www.youtube.com/@sebastectecnologia4547" target="_blank">YouTube</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header-right">
+      <a href="https://wa.me/5527999553035" class="btn-contact desktop-btn" target="_blank">Fale Conosco</a>
+      <button class="menu-btn" id="openMenuBtn"><i class="fa-solid fa-bars"></i></button>
+    </div>
   </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <img src="logo.png" alt="Sebastec Soluções" class="logo-img">
+      <button class="menu-btn" id="closeMenuBtn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="mobile-menu-links">
+      <a href="index.html">Home <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="index.html#produtos">Sistemas <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="sobre.html">Sobre <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="https://www.youtube.com/@sebastectecnologia4547" target="_blank">YouTube <i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+    <div class="mobile-menu-footer">
+      <a href="https://wa.me/5527999553035" class="btn-contact-mobile" target="_blank">Fale Conosco</a>
+    </div>
+  </div>
 
   <section class="master-block">
     <div class="master-container">
-      
       <div class="master-header">
         <div class="master-title">
           <h1>Conheça nossa<br>Equipe de Liderança</h1>
@@ -227,7 +53,6 @@
           <p>Desenvolvemos soluções digitais inteligentes que transformam processos manuais, burocráticos e ineficientes em sistemas automatizados, ágeis e escaláveis.</p>
           <p style="font-weight: 600; color: white; margin-top: 30px;">Se existe uma ideia, existe uma solução. Se existe um processo manual, existe uma forma de automatizá-lo. Nós transformamos desafios em sistemas.</p>
         </div>
-        
         <div>
           <a href="https://wa.me/5527999553035" class="btn-white" target="_blank">
             <i class="fa-solid fa-briefcase"></i> Fale com a Diretoria
@@ -236,60 +61,53 @@
       </div>
 
       <div class="team-grid">
-        
         <div class="team-card">
-          <div class="team-photo-box">
-            <img src="sebas.png" alt="José Sebastião">
-          </div>
+          <div class="team-photo-box"><img src="sebas.png" alt="José Sebastião"></div>
           <div class="team-info">
-            <h3>José Sebastião</h3>
-            <p>CEO & Fundador</p>
+            <h3>José Sebastião</h3><p>CEO & Fundador</p>
             <div class="team-social">
               <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
               <a href="#"><i class="fa-brands fa-instagram"></i></a>
             </div>
           </div>
         </div>
-
         <div class="team-card">
-          <div class="team-photo-box">
-            <img src="belchior.png" alt="Belchior Beling">
-          </div>
+          <div class="team-photo-box"><img src="belchior.png" alt="Belchior Beling"></div>
           <div class="team-info">
-            <h3>Belchior Beling</h3>
-            <p>Diretor Comercial - Angola</p>
+            <h3>Belchior Beling</h3><p>Diretor Comercial - Angola</p>
             <div class="team-social">
               <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
               <a href="#"><i class="fa-brands fa-instagram"></i></a>
             </div>
           </div>
         </div>
-
         <div class="team-card">
-          <div class="team-photo-box">
-            <img src="cordeiro.png" alt="Antonio Sebastião">
-          </div>
+          <div class="team-photo-box"><img src="cordeiro.jpeg" alt="Antonio Sebastião"></div>
           <div class="team-info">
-            <h3>Antonio Sebastião</h3>
-            <p>Diretor Técnico (CTO)</p>
+            <h3>Antonio Sebastião</h3><p>Diretor Técnico (CTO)</p>
             <div class="team-social">
               <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
               <a href="#"><i class="fa-brands fa-instagram"></i></a>
             </div>
           </div>
         </div>
-
       </div>
-
     </div>
   </section>
 
   <footer>
-    <a href="index.html" class="footer-logo-link">
-      <img src="logo.png" alt="Sebastec" class="footer-logo-img">
-    </a>
-    <p style="font-size: 0.95rem; color: var(--text-gray);">&copy; 2026 Sebastec Soluções em Tecnologia. Todos os direitos reservados.</p>
+    <a href="index.html" class="footer-logo-link"><img src="logo.png" alt="Sebastec" class="footer-logo-img"></a>
+    <p style="font-size: 0.95rem; color: var(--text-gray);">&copy; 2026 Sebastec Soluções em Tecnologia.</p>
   </footer>
 
+  <script>
+    const openMenuBtn = document.getElementById('openMenuBtn');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileLinks = document.querySelectorAll('.mobile-menu-links a');
+    openMenuBtn.addEventListener('click', () => { mobileMenu.classList.add('open'); document.body.style.overflow = 'hidden'; });
+    closeMenuBtn.addEventListener('click', () => { mobileMenu.classList.remove('open'); document.body.style.overflow = ''; });
+    mobileLinks.forEach(link => { link.addEventListener('click', () => { mobileMenu.classList.remove('open'); document.body.style.overflow = ''; }); });
+  </script>
 </body>
 </html>
