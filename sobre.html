@@ -15,8 +15,8 @@
       --primary-hover: #143468;
       --bg-white: #ffffff;
       --bg-gray: #f8fafc;
-      --text-main: #111827; /* Cor escura padrão para Títulos */
-      --text-gray: #4b5563;  /* Cor cinza padrão para Parágrafos */
+      --text-main: #111827;
+      --text-gray: #4b5563;
       --border-color: #e5e7eb;
     }
 
@@ -30,18 +30,13 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    h1, h2, h3, h4 { color: var(--text-main); }
-    p { color: var(--text-gray); }
-
     /* --- Header --- */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 15px 5%;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      background: var(--bg-white);
       position: sticky;
       top: 0;
       z-index: 100;
@@ -57,111 +52,150 @@
     .btn-contact {
       background: var(--primary); color: white; padding: 12px 28px; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: 0.3s;
     }
-    .btn-contact:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 8px 15px rgba(30, 74, 145, 0.2); }
+    .btn-contact:hover { background: var(--primary-hover); transform: translateY(-2px); }
 
-    /* --- Hero Sobre --- */
-    .about-hero {
-      background: linear-gradient(rgba(30, 74, 145, 0.95), rgba(20, 52, 104, 0.98)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1300&q=80') center/cover;
-      margin: 20px auto;
+    /* =========================================
+       BLOCO ÚNICO: SOBRE E EQUIPE
+       ========================================= */
+    .master-block {
+      background: linear-gradient(135deg, #0b1120 0%, #111827 100%);
+      padding: 100px 5% 120px;
+      color: white;
+      width: 100%;
+    }
+
+    .master-container {
       max-width: 1300px;
-      border-radius: 32px;
-      padding: 100px 8%;
-      color: white; /* Força o texto a ficar branco no fundo escuro */
+      margin: auto;
+    }
+
+    /* Topo do Bloco: Título e Botão */
+    .master-header {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
       gap: 40px;
+      margin-bottom: 60px;
     }
 
-    .about-hero-content { max-width: 700px; }
-    .about-hero-content h1 { font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.2; margin-bottom: 24px; font-weight: 800; color: white; }
-    .about-hero-content p { font-size: 1.15rem; line-height: 1.7; color: #e5e7eb; font-weight: 400; }
-
-    .hero-side-badge {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 30px;
-      border-radius: 24px;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.2);
-      text-align: center;
-      min-width: 250px;
+    .master-title { max-width: 800px; }
+    .master-title h1 { 
+      font-size: clamp(2.5rem, 5vw, 4rem); 
+      line-height: 1.1; 
+      font-weight: 800; 
+      margin-bottom: 24px;
+      color: white;
+      letter-spacing: -1px;
     }
-    .hero-side-badge i { font-size: 2.5rem; margin-bottom: 15px; display: block; color: #60a5fa; }
-    .hero-side-badge span { font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; color: white; }
 
-    /* --- Seção Missão Detalhada --- */
-    .mission-details { padding: 80px 8%; text-align: center; max-width: 1000px; margin: auto; }
-    .mission-details h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 24px; font-weight: 800; color: var(--text-main); }
-    .mission-details p { font-size: 1.1rem; line-height: 1.6; color: var(--text-gray); }
-    .highlight-text { color: var(--primary); font-weight: 700; }
+    .master-title p { 
+      font-size: 1.15rem; 
+      line-height: 1.8; 
+      color: #cbd5e1; 
+      margin-bottom: 20px;
+    }
 
-    /* --- Equipe --- */
-    .team-section { padding: 60px 5% 120px; background-color: var(--bg-white); }
-    .container { max-width: 1200px; margin: auto; }
-    
-    .section-label { text-align: center; font-weight: 700; color: var(--text-gray); text-transform: uppercase; font-size: 0.85rem; margin-bottom: 12px; letter-spacing: 1px; }
-    .section-header h2 { text-align: center; font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; margin-bottom: 20px; color: var(--text-main); }
+    /* Botão Estilo Ndapitila (Branco) */
+    .btn-white {
+      background: white;
+      color: var(--text-main);
+      padding: 16px 36px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      transition: 0.3s;
+      white-space: nowrap;
+    }
+    .btn-white:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
 
+    /* Grid da Equipe */
     .team-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 30px;
-      margin-top: 50px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
     }
 
     .team-card { text-align: center; }
-    .team-image-wrapper {
+    
+    /* Fundo da Foto (Azul Sebastec) */
+    .team-photo-box {
       background-color: var(--primary); 
-      border-radius: 40px;
-      height: 450px;
-      margin-bottom: 25px;
+      border-radius: 30px;
+      aspect-ratio: 4 / 5; /* Mantém a proporção do retrato */
+      margin-bottom: 30px;
       overflow: hidden;
-      position: relative;
       display: flex;
       align-items: flex-end;
       justify-content: center;
+      position: relative;
     }
-    .team-image-wrapper img {
+
+    .team-photo-box img {
       width: 100%;
-      height: 100%;
+      height: 95%; /* Dá espaço para a cabeça "respirar" */
       object-fit: cover;
-      filter: grayscale(20%);
+      object-position: bottom;
       transition: 0.4s;
     }
-    .team-card:hover img { transform: scale(1.05); filter: grayscale(0%); }
+    .team-card:hover .team-photo-box img { transform: scale(1.05); }
 
-    .team-info h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 5px; color: var(--text-main); }
-    .team-info p { color: var(--text-gray); font-weight: 600; margin-bottom: 20px; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
+    /* Textos da Equipe */
+    .team-info h3 { 
+      font-size: 1.6rem; 
+      font-weight: 700; 
+      margin-bottom: 5px; 
+      color: white; 
+    }
+    .team-info p { 
+      color: #94a3b8; 
+      font-weight: 500; 
+      margin-bottom: 20px; 
+      font-size: 1rem; 
+    }
 
+    /* Redes Sociais Brancas */
     .team-social { display: flex; justify-content: center; gap: 15px; }
     .team-social a {
-      width: 45px; height: 45px; background: var(--bg-gray); border-radius: 50%;
+      width: 40px; height: 40px; 
+      background: white; 
+      border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      color: var(--text-gray); text-decoration: none; transition: 0.3s;
-      border: 1px solid var(--border-color);
+      color: var(--text-main); 
+      text-decoration: none; 
+      transition: 0.3s;
+      font-size: 1.1rem;
     }
-    .team-social a:hover { background: var(--primary); color: white; border-color: var(--primary); }
+    .team-social a:hover { background: var(--primary); color: white; }
 
     /* --- Footer --- */
-    footer { background: var(--bg-gray); border-top: 1px solid var(--border-color); padding: 50px 20px 30px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+    footer { background: var(--bg-white); border-top: 1px solid var(--border-color); padding: 50px 20px 30px; text-align: center; display: flex; flex-direction: column; align-items: center; }
     .footer-logo-link { display: flex; align-items: center; justify-content: center; margin-bottom: 20px; text-decoration: none; }
     .footer-logo-img { height: clamp(50px, 6vw, 70px); width: auto; object-fit: contain; }
 
     /* --- Mobile --- */
+    @media (max-width: 900px) {
+      .master-header { flex-direction: column; }
+      .btn-white { width: 100%; justify-content: center; }
+    }
+
     @media (max-width: 768px) {
       header { padding: 12px 15px; }
       nav ul { display: none; }
       .btn-contact { padding: 10px 18px; font-size: 0.85rem; }
 
-      .about-hero { flex-direction: column; padding: 60px 20px; border-radius: 24px; margin: 10px 10px 40px; text-align: center; }
-      .about-hero-content h1 { font-size: 2rem; margin-bottom: 15px; }
-      .about-hero-content p { font-size: 1rem; }
-
-      .mission-details { padding: 40px 15px 60px; }
+      .master-block { padding: 60px 20px 80px; }
+      .master-title h1 { font-size: 2.2rem; }
       
-      .team-section { padding: 40px 15px 80px; }
-      .team-grid { grid-template-columns: 1fr; gap: 40px; }
-      .team-image-wrapper { height: 400px; border-radius: 24px; }
+      .team-grid { grid-template-columns: 1fr; gap: 60px; }
+      .team-photo-box { aspect-ratio: 1 / 1; /* Fica quadrado no celular para não ficar muito alto */ }
     }
   </style>
 </head>
@@ -183,34 +217,29 @@
     <a href="https://wa.me/5527999553035" class="btn-contact" target="_blank">Fale Conosco</a>
   </header>
 
-  <section class="about-hero">
-    <div class="about-hero-content">
-      <h1>Conheça nossa <br>Equipe de Liderança</h1>
-      <p>A SEBASTEC conecta mercados e oportunidades por meio da inovação. Com sede em Vitória (ES) e raízes profundas em Angola, transformamos processos manuais em sistemas escaláveis.</p>
-    </div>
-    <div class="hero-side-badge">
-      <i class="fa-solid fa-earth-americas"></i>
-      <span>Brasil & Angola</span>
-    </div>
-  </section>
-
-  <section class="mission-details">
-    <h2>Nós transformamos desafios em sistemas</h2>
-    <p>
-      Acreditamos que a tecnologia deve <span class="highlight-text">simplificar, acelerar e potencializar</span> resultados. 
-      Se existe uma ideia, existe uma solução. Se existe um processo manual, existe uma forma de automatizá-lo. 
-      Nosso propósito é eliminar a burocracia e a ineficiência através de softwares inteligentes.
-    </p>
-  </section>
-
-  <section class="team-section">
-    <div class="container">
-      <div class="section-label">Nossa Liderança</div>
+  <section class="master-block">
+    <div class="master-container">
       
+      <div class="master-header">
+        <div class="master-title">
+          <h1>Conheça nossa<br>Equipe de Liderança</h1>
+          <p>A SEBASTEC é uma empresa de tecnologia com sede em Vitória (ES - Brasil) e fortes raízes em Angola. Atuamos conectando mercados, pessoas e oportunidades por meio da inovação.</p>
+          <p>Desenvolvemos soluções digitais inteligentes que transformam processos manuais, burocráticos e ineficientes em sistemas automatizados, ágeis e escaláveis.</p>
+          <p style="font-weight: 600; color: white; margin-top: 30px;">Se existe uma ideia, existe uma solução. Se existe um processo manual, existe uma forma de automatizá-lo. Nós transformamos desafios em sistemas.</p>
+        </div>
+        
+        <div>
+          <a href="https://wa.me/5527999553035" class="btn-white" target="_blank">
+            <i class="fa-solid fa-briefcase"></i> Fale com a Diretoria
+          </a>
+        </div>
+      </div>
+
       <div class="team-grid">
+        
         <div class="team-card">
-          <div class="team-image-wrapper">
-            <img src="sebas.png" alt="José Sebastião">
+          <div class="team-photo-box">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=500&q=80" alt="José Sebastião">
           </div>
           <div class="team-info">
             <h3>José Sebastião</h3>
@@ -223,8 +252,8 @@
         </div>
 
         <div class="team-card">
-          <div class="team-image-wrapper">
-            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&h=500&q=80" alt="Belchior Beling">
+          <div class="team-photo-box">
+            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=500&q=80" alt="Belchior Beling">
           </div>
           <div class="team-info">
             <h3>Belchior Beling</h3>
@@ -237,8 +266,8 @@
         </div>
 
         <div class="team-card">
-          <div class="team-image-wrapper">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&h=500&q=80" alt="Antonio Sebastião">
+          <div class="team-photo-box">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80" alt="Antonio Sebastião">
           </div>
           <div class="team-info">
             <h3>Antonio Sebastião</h3>
@@ -251,6 +280,7 @@
         </div>
 
       </div>
+
     </div>
   </section>
 
