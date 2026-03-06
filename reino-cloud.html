@@ -305,20 +305,21 @@
         lucide.createIcons();
 
         // Menu Fixo e Mudança de Cor
+// Menu Fixo e Mudança de Cor (MANTENDO AZUL)
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
-            const logoText = document.getElementById('nav-logo-text');
+            
+            // Removemos a alteração de cor do texto, pois agora ele será sempre branco!
             if (window.scrollY > 50) {
-                nav.classList.add('bg-white/95', 'backdrop-blur-lg', 'shadow-md');
+                // Fica azul translúcido ao rolar
+                nav.classList.add('bg-[#1e3a8a]/95', 'backdrop-blur-lg', 'shadow-xl', 'border-blue-800/50');
                 nav.classList.remove('bg-transparent', 'border-white/10');
-                logoText.classList.add('text-blue-900');
-                logoText.classList.remove('text-white');
             } else {
-                nav.classList.remove('bg-white/95', 'backdrop-blur-lg', 'shadow-md');
+                // Fica 100% transparente no topo
+                nav.classList.remove('bg-[#1e3a8a]/95', 'backdrop-blur-lg', 'shadow-xl', 'border-blue-800/50');
                 nav.classList.add('bg-transparent', 'border-white/10');
-                logoText.classList.remove('text-blue-900');
-                logoText.classList.add('text-white');
             }
+        
         });
 
         // MOTOR DE ANIMAÇÃO DE ROLAGEM (REVEAL)
