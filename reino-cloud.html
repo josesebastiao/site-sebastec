@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReinoCloud - Gestão para Igrejas</title>
     
-    <link rel="icon" type="image/png" href="icon.png">
-    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="icon" type="image/png" href="assets/icons/icon-reino.png">
+    <link rel="apple-touch-icon" href="assets/icons/icon-reino.png">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#1e3a8a">
     
@@ -117,7 +117,7 @@
                                         <i data-lucide="users" class="text-white w-5 h-5"></i>
                                     </div>
                                     <h3 class="text-white font-bold text-lg mb-2">Secretaria</h3>
-                                    <p class="text-blue-100 text-sm leading-relaxed">Cadastro de Membros, Cartas,aniversariantes e cartão de Membro com QR Code.</p>
+                                    <p class="text-blue-100 text-sm leading-relaxed">Cadastro de Membros, Cartas, aniversariantes e cartão de Membro com QR Code.</p>
                                 </div>
 
                                 <div class="bg-blue-600/85 backdrop-blur-md p-5 rounded-3xl border border-blue-400/30 shadow-xl hover:-translate-y-2 transition duration-300 cursor-default sm:translate-y-8">
@@ -307,21 +307,16 @@
         lucide.createIcons();
 
         // Menu Fixo e Mudança de Cor
-// Menu Fixo e Mudança de Cor (MANTENDO AZUL)
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
             
-            // Removemos a alteração de cor do texto, pois agora ele será sempre branco!
             if (window.scrollY > 50) {
-                // Fica azul translúcido ao rolar
                 nav.classList.add('bg-[#1e3a8a]/95', 'backdrop-blur-lg', 'shadow-xl', 'border-blue-800/50');
                 nav.classList.remove('bg-transparent', 'border-white/10');
             } else {
-                // Fica 100% transparente no topo
                 nav.classList.remove('bg-[#1e3a8a]/95', 'backdrop-blur-lg', 'shadow-xl', 'border-blue-800/50');
                 nav.classList.add('bg-transparent', 'border-white/10');
             }
-        
         });
 
         // MOTOR DE ANIMAÇÃO DE ROLAGEM (REVEAL)
@@ -330,7 +325,6 @@
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                // Ativa a animação quando o elemento estiver 100px para dentro da tela
                 var elementVisible = 100; 
                 
                 if (elementTop < windowHeight - elementVisible) {
@@ -339,11 +333,10 @@
             }
         }
         
-        // Ouve a rolagem e o carregamento inicial da página
         window.addEventListener("scroll", reveal);
         window.addEventListener("load", reveal);
     </script>
-<script>
+    <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('./sw.js')
