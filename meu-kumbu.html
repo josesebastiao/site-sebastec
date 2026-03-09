@@ -1,52 +1,271 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MeuKumbu | Sebastec Soluções</title>
+
     <link rel="icon" type="image/png" href="assets/icons/icon-meukumbu.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#581c87">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #581c87;
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-100 {
+            transition-delay: 100ms;
+        }
+
+        .delay-200 {
+            transition-delay: 200ms;
+        }
+
+        .delay-300 {
+            transition-delay: 300ms;
+        }
+
+        .delay-400 {
+            transition-delay: 400ms;
+        }
+
+        @keyframes fade-in-up {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fade-in-up 1s ease-out forwards;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <div class="header-left">
-            <a href="index.html" class="logo-link"><img src="assets/img/logo.png" alt="Sebastec" class="logo-img"></a>
-        </div>
-        <div class="header-right">
-            <a href="index.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Voltar ao Início</a>
-        </div>
-    </header>
 
-    <section class="product-hero">
-        <div class="product-icon"><i class="fa-solid fa-wallet"></i></div>
-        <h1>MeuKumbu</h1>
-        <p class="subtitle">Gestão financeira pessoal e empresarial sem complicação. Abandone de vez as planilhas complexas, crie orçamentos e saiba exatamente para onde vai o seu dinheiro no dia a dia.</p>
-        <a href="https://meukumbu.sebastec.com.br/" class="btn-primary" target="_blank">Acessar o App <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+<body class="antialiased">
+
+    <nav class="fixed top-0 w-full z-[60] bg-transparent border-b border-white/10 transition-all duration-300"
+        id="navbar">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 flex items-center justify-center bg-white rounded-xl shadow-lg">
+                    <i data-lucide="wallet" class="text-purple-600 w-6 h-6"></i>
+                </div>
+                <span class="font-bold text-2xl tracking-tight text-white drop-shadow-sm"
+                    id="nav-logo-text">MeuKumbu</span>
+            </div>
+
+            <div class="flex items-center gap-2 md:gap-4">
+                <a href="index.html"
+                    class="flex items-center gap-2 text-white border border-white/30 hover:bg-white/10 px-4 md:px-5 py-2 md:py-2.5 rounded-full font-bold text-xs md:text-sm transition">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Voltar
+                </a>
+                <a href="https://meukumbu.sebastec.com.br/" target="_blank"
+                    class="bg-white text-purple-900 hover:bg-gray-100 px-5 md:px-6 py-2.5 rounded-full font-bold text-xs md:text-sm transition shadow-lg shadow-black/20">
+                    Acessar o App
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+    <section
+        class="fixed top-0 left-0 w-full h-screen z-0 flex flex-col items-center justify-start pt-32 md:pt-40 px-6 bg-[#581c87] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-600 via-purple-900 to-slate-900 text-center animate-fade-in">
+        <div class="max-w-4xl mx-auto">
+            <div
+                class="inline-block bg-white/10 border border-white/20 text-purple-100 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-8 backdrop-blur-md shadow-lg">
+                Gestão Financeira Pessoal Inteligente
+            </div>
+            <h1 class="text-5xl md:text-7xl font-black text-white leading-tight mb-8 tracking-tight drop-shadow-2xl">
+                O controle do seu dinheiro <br>na palma da sua mão.
+            </h1>
+            <p
+                class="text-lg md:text-2xl text-purple-100 mb-10 max-w-2xl mx-auto font-medium opacity-90 drop-shadow-md">
+                Abandone de vez as planilhas complexas, crie orçamentos e saiba exatamente para onde vai o seu dinheiro
+                no dia a dia.
+            </p>
+        </div>
     </section>
 
-    <section class="system-preview"><div class="preview-box"><i class="fa-regular fa-image"></i></div></section>
+    <main
+        class="relative z-10 w-full mt-[75vh] md:mt-[80vh] shadow-[0_-20px_60px_rgba(0,0,0,0.4)] border-t border-white/50 rounded-t-[3rem] flex flex-col overflow-hidden bg-slate-50">
 
-    <section class="features-section">
-        <div class="features-grid">
-            <div class="feature-card">
-                <i class="fa-solid fa-money-bill-transfer"></i><h3>Controle de Despesas</h3>
-                <p>Descubra exatamente para onde o seu dinheiro foi gasto através do nosso extrato inteligente e altamente categorizado. Domine os seus gastos.</p>
+        <section class="w-full bg-slate-900 py-24 px-4 sm:px-6 overflow-hidden rounded-t-[3rem]">
+            <div class="max-w-[85rem] mx-auto">
+
+                <div class="reveal text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-4xl md:text-5xl font-black text-white mb-6 leading-tight tracking-tight">Assuma o
+                        volante das suas finanças</h2>
+                    <p class="text-lg text-slate-400">Um sistema projetado para ser intuitivo, bonito e poderoso, te
+                        ajudando a organizar seus gastos em poucos cliques.</p>
+                </div>
+
+                <div class="flex flex-col lg:flex-row gap-10 lg:gap-12 items-center">
+
+                    <div class="w-full lg:w-1/2 reveal delay-100 flex items-center justify-center">
+                        <div class="relative w-full group cursor-pointer">
+                            <div
+                                class="absolute -inset-3 bg-gradient-to-r from-purple-600 to-fuchsia-400 rounded-[2.5rem] blur-2xl opacity-40 group-hover:opacity-90 transition duration-500">
+                            </div>
+
+                            <div
+                                class="relative w-full rounded-[2rem] overflow-hidden shadow-2xl bg-slate-800 aspect-[4/3] border border-slate-700/80 z-10 flex items-center justify-center">
+                                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1600"
+                                    alt="Gestão Financeira"
+                                    class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition duration-700 ease-in-out" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                                <div class="absolute bottom-6 left-6 right-6 text-left">
+                                    <h3 class="text-2xl font-bold text-white mb-2">Interface Moderna</h3>
+                                    <p class="text-purple-200 text-sm">Design limpo para você focar no que importa.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="w-full lg:w-1/2 relative rounded-[2.5rem] overflow-hidden shadow-2xl reveal delay-200 group flex flex-col">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1600"
+                            alt="Finanças"
+                            class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-105 group-hover:opacity-40 transition duration-700 ease-in-out" />
+                        <div class="absolute inset-0 bg-slate-900/70"></div>
+
+                        <div class="relative p-6 md:p-10 flex-1 flex flex-col justify-center gap-6">
+
+                            <div
+                                class="bg-purple-600/85 backdrop-blur-md p-6 rounded-3xl border border-purple-400/30 shadow-xl hover:-translate-y-2 transition duration-300 cursor-default">
+                                <div class="flex items-center gap-4 mb-3">
+                                    <div
+                                        class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center shadow-inner shrink-0">
+                                        <i data-lucide="banknote" class="text-white w-6 h-6"></i>
+                                    </div>
+                                    <h3 class="text-white font-bold text-xl">Controle de Despesas</h3>
+                                </div>
+                                <p class="text-purple-100 leading-relaxed md:text-[15px]">Descubra exatamente para onde
+                                    o seu dinheiro foi gasto através do nosso extrato inteligente e altamente
+                                    categorizado. Domine os seus gastos.</p>
+                            </div>
+
+                            <div
+                                class="bg-purple-600/85 backdrop-blur-md p-6 rounded-3xl border border-purple-400/30 shadow-xl hover:-translate-y-2 transition duration-300 cursor-default">
+                                <div class="flex items-center gap-4 mb-3">
+                                    <div
+                                        class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center shadow-inner shrink-0">
+                                        <i data-lucide="target" class="text-white w-6 h-6"></i>
+                                    </div>
+                                    <h3 class="text-white font-bold text-xl">Metas e Orçamentos</h3>
+                                </div>
+                                <p class="text-purple-100 leading-relaxed md:text-[15px]">Crie tetos de gastos mensais e
+                                    defina limites para categorias. Saiba como poupar da maneira correta para atingir
+                                    seus grandes objetivos de vida.</p>
+                            </div>
+
+                            <div
+                                class="bg-purple-600/85 backdrop-blur-md p-6 rounded-3xl border border-purple-400/30 shadow-xl hover:-translate-y-2 transition duration-300 cursor-default">
+                                <div class="flex items-center gap-4 mb-3">
+                                    <div
+                                        class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center shadow-inner shrink-0">
+                                        <i data-lucide="pie-chart" class="text-white w-6 h-6"></i>
+                                    </div>
+                                    <h3 class="text-white font-bold text-xl">Relatórios e Gráficos</h3>
+                                </div>
+                                <p class="text-purple-100 leading-relaxed md:text-[15px]">Acompanhe todas as suas
+                                    métricas em gráficos limpos e diretos. Torne a sua tomada de decisão financeira em
+                                    algo simples e visual.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <div class="feature-card">
-                <i class="fa-solid fa-bullseye"></i><h3>Metas e Orçamentos</h3>
-                <p>Crie tetos de gastos mensais e defina limites para categorias. Saiba como poupar da maneira correta para atingir seus grandes objetivos de vida.</p>
+        </section>
+
+    </main>
+
+    <footer class="bg-white py-10 text-center relative z-20 border-t border-gray-200">
+        <div class="flex items-center justify-center gap-2 mb-3 text-purple-900">
+            <div class="w-8 h-8 flex items-center justify-center bg-purple-600 rounded-lg shadow-md">
+                <i data-lucide="wallet" class="text-white w-5 h-5"></i>
             </div>
-            <div class="feature-card">
-                <i class="fa-solid fa-chart-line"></i><h3>Relatórios e Gráficos</h3>
-                <p>Acompanhe todas as suas métricas em gráficos limpos e diretos. Torne a sua tomada de decisão financeira em algo simples e visual.</p>
-            </div>
+            <span class="font-bold text-xl tracking-tight">MeuKumbu</span>
         </div>
-    </section>
-
-    <footer>
-        <a href="index.html" class="footer-logo-link"><img src="assets/img/logo.png" alt="Sebastec" class="footer-logo-img"></a>
-        <p style="font-size: 0.95rem; color: var(--text-gray);">&copy; 2026 Sebastec Soluções em Tecnologia.</p>
+        <p class="text-slate-500 text-xs font-bold tracking-widest mt-4">COPYRIGHT © 2026 SEBASTEC SYSTEM.</p>
     </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Menu Fixo e Mudança de Cor
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-[#581c87]/95', 'backdrop-blur-lg', 'shadow-xl', 'border-purple-800/50');
+                nav.classList.remove('bg-transparent', 'border-white/10');
+            } else {
+                nav.classList.remove('bg-[#581c87]/95', 'backdrop-blur-lg', 'shadow-xl', 'border-purple-800/50');
+                nav.classList.add('bg-transparent', 'border-white/10');
+            }
+        });
+
+        // MOTOR DE ANIMAÇÃO DE ROLAGEM (REVEAL)
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        window.addEventListener("load", reveal);
+    </script>
 </body>
+
 </html>
