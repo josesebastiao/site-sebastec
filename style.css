@@ -316,7 +316,7 @@ header {
 }
 
 .sys-card {
-  background: rgba(95, 163, 240, 0.85);
+  background: rgba(30, 74, 145, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-radius: 24px;
@@ -325,8 +325,8 @@ header {
   flex-direction: column;
   align-items: flex-start;
   text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 10px 30px rgba(95, 163, 240, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(30, 74, 145, 0.25);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.27);
   position: relative;
   overflow: hidden;
@@ -339,7 +339,7 @@ header {
   left: -150%;
   width: 50%;
   height: 100%;
-  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5), transparent);
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
   transform: skewX(-20deg);
   transition: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.27);
   z-index: 1;
@@ -356,9 +356,9 @@ header {
 
 .sys-card:hover {
   transform: translateY(-10px);
-  background: rgba(95, 163, 240, 1);
-  border-color: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 25px 50px rgba(95, 163, 240, 0.3);
+  background: rgba(30, 74, 145, 1);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 25px 50px rgba(30, 74, 145, 0.4);
 }
 
 .sys-card-icon {
