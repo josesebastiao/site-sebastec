@@ -1,52 +1,272 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedjá Delivery | Sebastec Soluções</title>
+
     <link rel="icon" type="image/png" href="assets/icons/icon-pedja.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#ea580c">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ea580c;
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-100 {
+            transition-delay: 100ms;
+        }
+
+        .delay-200 {
+            transition-delay: 200ms;
+        }
+
+        .delay-300 {
+            transition-delay: 300ms;
+        }
+
+        .delay-400 {
+            transition-delay: 400ms;
+        }
+
+        @keyframes fade-in-up {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fade-in-up 1s ease-out forwards;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <div class="header-left">
-            <a href="index.html" class="logo-link"><img src="assets/img/logo.png" alt="Sebastec" class="logo-img"></a>
-        </div>
-        <div class="header-right">
-            <a href="index.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Voltar ao Início</a>
-        </div>
-    </header>
 
-    <section class="product-hero">
-        <div class="product-icon"><i class="fa-solid fa-motorcycle"></i></div>
-        <h1>Pedjá Delivery</h1>
-        <p class="subtitle">O aplicativo de delivery próprio que liberta seu restaurante das taxas absurdas. Ofereça um cardápio digital moderno e gerencie seus pedidos com facilidade.</p>
-        <a href="https://pedja.sebastec.com.br/" class="btn-primary" target="_blank">Acessar a Plataforma <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+<body class="antialiased">
+
+    <nav class="fixed top-0 w-full z-[60] bg-transparent border-b border-white/10 transition-all duration-300"
+        id="navbar">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 flex items-center justify-center bg-white rounded-xl shadow-lg">
+                    <i data-lucide="motorcycle" class="text-orange-600 w-6 h-6"></i>
+                </div>
+                <span class="font-bold text-2xl tracking-tight text-white drop-shadow-sm" id="nav-logo-text">Pedjá
+                    Delivery</span>
+            </div>
+
+            <div class="flex items-center gap-2 md:gap-4">
+                <a href="index.html"
+                    class="flex items-center gap-2 text-white border border-white/30 hover:bg-white/10 px-4 md:px-5 py-2 md:py-2.5 rounded-full font-bold text-xs md:text-sm transition">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Voltar
+                </a>
+                <a href="https://pedja.sebastec.com.br/" target="_blank"
+                    class="bg-white text-orange-900 hover:bg-gray-100 px-5 md:px-6 py-2.5 rounded-full font-bold text-xs md:text-sm transition shadow-lg shadow-black/20">
+                    Acessar a Plataforma
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+    <section
+        class="fixed top-0 left-0 w-full h-screen z-0 flex flex-col items-center justify-start pt-32 md:pt-40 px-6 bg-[#ea580c] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-orange-500 via-orange-600 to-slate-900 text-center animate-fade-in">
+        <div class="max-w-4xl mx-auto">
+            <div
+                class="inline-block bg-white/10 border border-white/20 text-orange-100 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-8 backdrop-blur-md shadow-lg">
+                Gestão de Delivery e Cardápio Digital
+            </div>
+            <h1 class="text-5xl md:text-7xl font-black text-white leading-tight mb-8 tracking-tight drop-shadow-2xl">
+                Seu próprio app de<br>delivery sem comissões.
+            </h1>
+            <p
+                class="text-lg md:text-2xl text-orange-100 mb-10 max-w-2xl mx-auto font-medium opacity-90 drop-shadow-md">
+                O aplicativo que liberta seu restaurante das taxas absurdas. Ofereça um cardápio digital moderno e
+                gerencie seus pedidos com extrema facilidade.
+            </p>
+        </div>
     </section>
 
-    <section class="system-preview"><div class="preview-box"><i class="fa-regular fa-image"></i></div></section>
+    <main
+        class="relative z-10 w-full mt-[75vh] md:mt-[80vh] shadow-[0_-20px_60px_rgba(0,0,0,0.4)] border-t border-white/50 rounded-t-[3rem] flex flex-col overflow-hidden bg-slate-50">
 
-    <section class="features-section">
-        <div class="features-grid">
-            <div class="feature-card">
-                <i class="fa-solid fa-book-open"></i><h3>Cardápio Digital Impecável</h3>
-                <p>Surpreenda seus clientes com um menu bem elaborado, atrativo e altamente responsivo. Eles farão pedidos de qualquer celular com extrema facilidade.</p>
+        <section class="w-full bg-slate-900 py-24 px-4 sm:px-6 overflow-hidden rounded-t-[3rem]">
+            <div class="max-w-[85rem] mx-auto">
+
+                <div class="reveal text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-4xl md:text-5xl font-black text-white mb-6 leading-tight tracking-tight">Venda mais
+                        com autonomia total</h2>
+                    <p class="text-lg text-slate-400">Um sistema projetado para ser seu melhor parceiro na cozinha. Crie
+                        seu cardápio, divulgue para os clientes e veja os pedidos caindo direto na sua tela.</p>
+                </div>
+
+                <div class="flex flex-col lg:flex-row gap-10 lg:gap-12 items-center">
+
+                    <div class="w-full lg:w-1/2 reveal delay-100 flex items-center justify-center">
+                        <div class="relative w-full group cursor-pointer">
+                            <div
+                                class="absolute -inset-3 bg-gradient-to-r from-orange-500 to-amber-400 rounded-[2.5rem] blur-2xl opacity-40 group-hover:opacity-90 transition duration-500">
+                            </div>
+
+                            <div
+                                class="relative w-full rounded-[2rem] overflow-hidden shadow-2xl bg-slate-800 aspect-[4/3] border border-slate-700/80 z-10 flex items-center justify-center">
+                                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=1600"
+                                    alt="Delivery de Comida"
+                                    class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition duration-700 ease-in-out" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                                <div class="absolute bottom-6 left-6 right-6 text-left">
+                                    <h3 class="text-2xl font-bold text-white mb-2">Pedidos na Velocidade da Luz</h3>
+                                    <p class="text-orange-200 text-sm">Organização perfeita desde a cozinha até o
+                                        cliente.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="w-full lg:w-1/2 relative rounded-[2.5rem] overflow-hidden shadow-2xl reveal delay-200 group flex flex-col">
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=1600"
+                            alt="Cozinha e Cardápio"
+                            class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-105 group-hover:opacity-40 transition duration-700 ease-in-out" />
+                        <div class="absolute inset-0 bg-slate-900/70"></div>
+
+                        <div class="relative p-6 md:p-10 flex-1 flex flex-col justify-center gap-6">
+
+                            <div
+                                class="bg-orange-600/80 backdrop-blur-md p-6 rounded-3xl border border-orange-400/30 shadow-xl hover:-translate-y-2 transition duration-300 cursor-default">
+                                <div class="flex items-center gap-4 mb-3">
+                                    <div
+                                        class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center shadow-inner shrink-0">
+                                        <i data-lucide="book-open" class="text-white w-6 h-6"></i>
+                                    </div>
+                                    <h3 class="text-white font-bold text-xl">Cardápio Digital Impecável</h3>
+                                </div>
+                                <p class="text-orange-100 leading-relaxed md:text-[15px]">Surpreenda seus clientes com
+                                    um menu bem elaborado, atrativo e altamente responsivo. Eles farão pedidos de
+                                    qualquer celular com incrível facilidade.</p>
+                            </div>
+
+                            <div
+                                class="bg-orange-600/80 backdrop-blur-md p-6 rounded-3xl border border-orange-400/30 shadow-xl hover:-translate-y-2 transition duration-300 cursor-default">
+                                <div class="flex items-center gap-4 mb-3">
+                                    <div
+                                        class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center shadow-inner shrink-0">
+                                        <i data-lucide="percent" class="text-white w-6 h-6"></i>
+                                    </div>
+                                    <h3 class="text-white font-bold text-xl">Zero Taxas Abusivas</h3>
+                                </div>
+                                <p class="text-orange-100 leading-relaxed md:text-[15px]">Diferente dos grandes apps do
+                                    mercado, aqui você não paga comissões malucas por venda. O lucro bruto da sua
+                                    operação de delivery é 100% seu.</p>
+                            </div>
+
+                            <div
+                                class="bg-orange-600/80 backdrop-blur-md p-6 rounded-3xl border border-orange-400/30 shadow-xl hover:-translate-y-2 transition duration-300 cursor-default">
+                                <div class="flex items-center gap-4 mb-3">
+                                    <div
+                                        class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center shadow-inner shrink-0">
+                                        <i data-lucide="route" class="text-white w-6 h-6"></i>
+                                    </div>
+                                    <h3 class="text-white font-bold text-xl">Gestão de Expedição</h3>
+                                </div>
+                                <p class="text-orange-100 leading-relaxed md:text-[15px]">Acompanhe o status de cada
+                                    envio e organize as rotas do motoboy em uma tela rápida, mantendo sua cozinha e a
+                                    entrega super eficientes e sem atrasos.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <div class="feature-card">
-                <i class="fa-solid fa-percent"></i><h3>Zero Taxas Abusivas</h3>
-                <p>Diferente dos grandes apps do mercado, aqui você não paga comissões malucas por venda. O lucro bruto da sua operação de delivery é inteiramente seu.</p>
+        </section>
+
+    </main>
+
+    <footer class="bg-white py-10 text-center relative z-20 border-t border-gray-200">
+        <div class="flex items-center justify-center gap-2 mb-3 text-orange-900">
+            <div class="w-8 h-8 flex items-center justify-center bg-orange-600 rounded-lg shadow-md">
+                <i data-lucide="motorcycle" class="text-white w-5 h-5"></i>
             </div>
-            <div class="feature-card">
-                <i class="fa-solid fa-route"></i><h3>Gestão de Expedição</h3>
-                <p>Acompanhe o status de cada envio e organize as rotas do motoboy em uma tela rápida, mantendo sua cozinha e a entrega super eficientes.</p>
-            </div>
+            <span class="font-bold text-xl tracking-tight">Pedjá Delivery</span>
         </div>
-    </section>
-
-    <footer>
-        <a href="index.html" class="footer-logo-link"><img src="assets/img/logo.png" alt="Sebastec" class="footer-logo-img"></a>
-        <p style="font-size: 0.95rem; color: var(--text-gray);">&copy; 2026 Sebastec Soluções em Tecnologia.</p>
+        <p class="text-slate-500 text-xs font-bold tracking-widest mt-4">COPYRIGHT © 2026 SEBASTEC SYSTEM.</p>
     </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Menu Fixo e Mudança de Cor
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-[#ea580c]/95', 'backdrop-blur-lg', 'shadow-xl', 'border-orange-800/50');
+                nav.classList.remove('bg-transparent', 'border-white/10');
+            } else {
+                nav.classList.remove('bg-[#ea580c]/95', 'backdrop-blur-lg', 'shadow-xl', 'border-orange-800/50');
+                nav.classList.add('bg-transparent', 'border-white/10');
+            }
+        });
+
+        // MOTOR DE ANIMAÇÃO DE ROLAGEM (REVEAL)
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        window.addEventListener("load", reveal);
+    </script>
 </body>
+
 </html>
