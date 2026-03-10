@@ -316,17 +316,15 @@ header {
 }
 
 .sys-card {
-  background: rgba(30, 74, 145, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: var(--bg-white);
   border-radius: 24px;
   padding: 40px 30px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 10px 30px rgba(30, 74, 145, 0.25);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.27);
   position: relative;
   overflow: hidden;
@@ -339,7 +337,7 @@ header {
   left: -150%;
   width: 50%;
   height: 100%;
-  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.8), transparent);
   transform: skewX(-20deg);
   transition: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.27);
   z-index: 1;
@@ -356,39 +354,21 @@ header {
 
 .sys-card:hover {
   transform: translateY(-10px);
-  background: rgba(30, 74, 145, 1);
-  border-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 25px 50px rgba(30, 74, 145, 0.4);
-}
-
-.sys-card-icon {
-  font-size: 2rem;
-  color: #ffffff;
-  margin-bottom: 30px;
-  transition: 0.3s;
-}
-
-.sys-card:hover .sys-card-icon {
-  color: #ffffff;
-  transform: scale(1.15);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
 }
 
 .sys-card h3 {
   font-size: 1.5rem;
   font-weight: 800;
-  color: #ffffff;
+  color: var(--text-main);
   margin-bottom: 12px;
   transition: 0.3s;
   letter-spacing: -0.5px;
 }
 
-.sys-card:hover h3 {
-  color: #ffffff;
-}
-
 .sys-card p {
   font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--text-gray);
   line-height: 1.6;
   margin-bottom: 30px;
 }
@@ -396,14 +376,101 @@ header {
 .sys-arrow {
   margin-top: auto;
   align-self: flex-end;
-  color: #ffffff;
+  color: var(--text-gray);
   font-size: 1.2rem;
   transition: all 0.3s;
 }
 
+.sys-card-icon {
+  font-size: 2.2rem;
+  color: var(--text-main);
+  background: var(--bg-light);
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  margin-bottom: 30px;
+  transition: 0.3s;
+}
+
+.sys-card:hover .sys-card-icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
 .sys-card:hover .sys-arrow {
   transform: translateX(6px);
-  color: #ffffff;
+}
+
+/* Identidade Visual Reino Cloud */
+.card-reino:hover {
+  border-color: #2563eb;
+}
+
+.card-reino .sys-card-icon {
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+.card-reino:hover .sys-card-icon {
+  background: #2563eb;
+  color: white;
+}
+
+.card-reino:hover h3 {
+  color: #2563eb;
+}
+
+.card-reino:hover .sys-arrow {
+  color: #2563eb;
+}
+
+/* Identidade Visual MeuKumbu */
+.card-kumbu:hover {
+  border-color: #7e22ce;
+}
+
+.card-kumbu .sys-card-icon {
+  color: #7e22ce;
+  background: #faf5ff;
+}
+
+.card-kumbu:hover .sys-card-icon {
+  background: #7e22ce;
+  color: white;
+}
+
+.card-kumbu:hover h3 {
+  color: #7e22ce;
+}
+
+.card-kumbu:hover .sys-arrow {
+  color: #7e22ce;
+}
+
+/* Identidade Visual Pedjá */
+.card-pedja:hover {
+  border-color: #ea580c;
+}
+
+.card-pedja .sys-card-icon {
+  color: #ea580c;
+  background: #fff7ed;
+}
+
+.card-pedja:hover .sys-card-icon {
+  background: #ea580c;
+  color: white;
+}
+
+.card-pedja:hover h3 {
+  color: #ea580c;
+}
+
+.card-pedja:hover .sys-arrow {
+  color: #ea580c;
 }
 
 .picpay-authority-section {
