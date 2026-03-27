@@ -12,22 +12,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        /* Importando a fonte Poppins */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
-
         body { font-family: 'Poppins', sans-serif; overflow-x: hidden; background-color: #f8fafc; }
-
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f5f9; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-
         .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
-        .delay-100 { transition-delay: 100ms; }
-        .delay-200 { transition-delay: 200ms; }
-        .delay-300 { transition-delay: 300ms; }
-
         .bg-pedja-dark { background-color: #0B132B; }
         .text-pedja-dark { color: #0B132B; }
     </style>
@@ -43,74 +35,48 @@
                 </div>
                 <span class="font-extrabold text-2xl tracking-tight text-orange-600">Ped<span class="text-pedja-dark">Já.</span></span>
             </div>
-
             <div class="hidden md:flex items-center gap-8 font-semibold text-sm text-slate-600">
                 <a href="#funcionalidades" class="hover:text-orange-600 transition">Funcionalidades</a>
-                <a href="#video" class="hover:text-orange-600 transition">Como Funciona</a>
+                <a href="#video-desktop" class="hover:text-orange-600 transition">Módulo Desktop</a>
+                <a href="#video-mobile" class="hover:text-orange-600 transition">Módulo Mobile</a>
                 <a href="#planos" class="hover:text-orange-600 transition">Planos</a>
             </div>
-
             <div class="flex items-center gap-3">
-                <a href="https://pedja.sebastec.com.br/" class="hidden sm:flex items-center justify-center px-6 py-2.5 border border-slate-300 text-slate-700 font-semibold rounded-lg hover:border-orange-600 hover:text-orange-600 transition bg-transparent">
-                    Entrar
-                </a>
-                <a href="cadastro.html" class="flex items-center justify-center px-6 py-2.5 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition shadow-md shadow-orange-500/30">
-                    Cadastre-se
-                </a>
+                <a href="https://pedja.sebastec.com.br/" class="hidden sm:flex items-center justify-center px-6 py-2.5 border border-slate-300 text-slate-700 font-semibold rounded-lg hover:border-orange-600 hover:text-orange-600 transition bg-transparent">Entrar</a>
+                <a href="cadastro.html" class="flex items-center justify-center px-6 py-2.5 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition shadow-md shadow-orange-500/30">Cadastre-se</a>
             </div>
         </div>
     </nav>
 
     <section class="pt-40 pb-24 md:pt-48 md:pb-32 px-6 bg-gradient-to-br from-orange-600 to-orange-500 relative overflow-hidden">
         <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
-
         <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
             <div class="reveal active text-center lg:text-left">
-                <div class="inline-block bg-white/20 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 backdrop-blur-md border border-white/20">
-                    Gestão Completa de Restaurantes
-                </div>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.15] mb-6 tracking-tight">
-                    A tecnologia que cuida da <span class="text-pedja-dark">gestão completa</span> do seu restaurante!
-                </h1>
-                <p class="text-lg md:text-xl text-orange-50 mb-10 max-w-xl mx-auto lg:mx-0 font-medium leading-relaxed">
-                    Chega de perder tempo e 20% de comissão para outros apps. Tenha cardápio digital, PDV, gestão de mesas e motoboys num só lugar.
-                </p>
+                <div class="inline-block bg-white/20 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 backdrop-blur-md border border-white/20">Gestão Completa de Restaurantes</div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.15] mb-6 tracking-tight">A tecnologia que cuida da <span class="text-pedja-dark">gestão completa</span> do seu restaurante!</h1>
+                <p class="text-lg md:text-xl text-orange-50 mb-10 max-w-xl mx-auto lg:mx-0 font-medium leading-relaxed">Chega de perder tempo e 20% de comissão para outros apps. Tenha cardápio digital, PDV, gestão de mesas e motoboys num só lugar.</p>
                 <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
-                    <a href="#planos" class="w-full sm:w-auto bg-pedja-dark hover:bg-slate-800 text-white px-8 py-4 rounded-lg font-bold text-lg transition shadow-xl flex items-center justify-center gap-2">
-                        Ver Planos <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                    </a>
-                    <a href="#video" class="w-full sm:w-auto bg-transparent border-2 border-white/30 hover:border-white text-white hover:bg-white/10 px-8 py-4 rounded-lg font-bold text-lg transition flex items-center justify-center gap-2">
-                        <i data-lucide="play-circle" class="w-5 h-5"></i> Assistir Demo
-                    </a>
+                    <a href="#planos" class="w-full sm:w-auto bg-pedja-dark hover:bg-slate-800 text-white px-8 py-4 rounded-lg font-bold text-lg transition shadow-xl flex items-center justify-center gap-2">Ver Planos <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
+                    <a href="#video-desktop" class="w-full sm:w-auto bg-transparent border-2 border-white/30 hover:border-white text-white hover:bg-white/10 px-8 py-4 rounded-lg font-bold text-lg transition flex items-center justify-center gap-2"><i data-lucide="play-circle" class="w-5 h-5"></i> Assistir Demo</a>
                 </div>
             </div>
-
+            
             <div class="reveal active delay-100 relative w-full mx-auto h-[300px] sm:h-[350px] md:h-[450px] mt-8 lg:mt-0 flex items-center justify-center group">
                 <img src="assets/img/mockup-completo.png" alt="Sistema PedJá" class="w-full h-full object-contain group-hover:scale-105 transition duration-700 relative z-10 drop-shadow-2xl" />
                 <div class="absolute bottom-4 sm:bottom-12 left-0 sm:left-[-10px] bg-white p-3 sm:p-4 rounded-2xl shadow-xl flex items-center gap-3 sm:gap-4 animate-bounce z-20 scale-90 sm:scale-100">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600">
-                        <i data-lucide="check-check"></i>
-                    </div>
-                    <div>
-                        <p class="font-bold text-slate-800 text-sm sm:text-base">Novo Pedido!</p>
-                        <p class="text-xs font-medium text-slate-500">Agora mesmo</p>
-                    </div>
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600"><i data-lucide="check-check"></i></div>
+                    <div><p class="font-bold text-slate-800 text-sm sm:text-base">Novo Pedido!</p><p class="text-xs font-medium text-slate-500">Agora mesmo</p></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="video" class="py-24 px-6 bg-white relative z-20">
+    <section id="video-desktop" class="py-24 px-6 bg-white relative z-20">
         <div class="max-w-5xl mx-auto reveal text-center">
-            <h2 class="text-3xl md:text-5xl font-bold text-pedja-dark mb-6">O ecossistema para fazer seu restaurante crescer.</h2>
-            <p class="text-lg text-slate-500 mb-12 max-w-3xl mx-auto font-medium">Um sistema para substituir todos os outros! Assista ao vídeo e veja como conectamos toda a sua operação.</p>
-            <div class="aspect-video w-full bg-slate-900 rounded-[2rem] shadow-2xl overflow-hidden relative group cursor-pointer border-8 border-slate-100">
-                <img src="https://placehold.co/1600x900/ea580c/ffffff?text=COLOQUE+AQUI+A+THUMBNAIL+DO+SEU+VÍDEO" alt="Video Demo" class="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition duration-500" />
-                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <div class="w-24 h-24 bg-white text-orange-600 rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition duration-300">
-                        <i data-lucide="play" class="w-10 h-10 ml-1"></i>
-                    </div>
-                </div>
+            <h2 class="text-3xl md:text-5xl font-bold text-pedja-dark mb-6">Painel Administrativo Completo</h2>
+            <p class="text-lg text-slate-500 mb-12 max-w-3xl mx-auto font-medium">Veja como é fácil gerenciar pedidos, estoque e financeiro pelo seu computador.</p>
+            <div class="aspect-video w-full bg-slate-900 rounded-[2rem] shadow-2xl overflow-hidden relative group border-8 border-slate-100">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/y9Pfp68_sBU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         </div>
     </section>
@@ -165,24 +131,33 @@
         </div>
     </section>
 
-    <section id="planos" class="py-24 px-6 bg-slate-50">
+    <section id="video-mobile" class="py-24 px-6 bg-slate-50 relative z-20">
+        <div class="max-w-4xl mx-auto reveal flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2 text-center md:text-left">
+                <h2 class="text-3xl md:text-4xl font-bold text-pedja-dark mb-6 tracking-tight">Operação na Palma da Mão</h2>
+                <p class="text-lg text-slate-500 font-medium">Assista ao lado como funciona o aplicativo do lojista. Receba notificações de novos pedidos e controle tudo pelo celular de onde estiver.</p>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative w-[280px] h-[500px] bg-slate-900 rounded-[3rem] border-[8px] border-slate-800 shadow-2xl overflow-hidden">
+                    <div class="absolute top-0 inset-x-0 h-6 bg-slate-800 rounded-b-2xl w-1/3 mx-auto z-30"></div>
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/0WOgRv-AA2s" title="Módulo Mobile PedJá" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="planos" class="py-24 px-6 bg-white">
         <div class="max-w-5xl mx-auto text-center">
             <div class="mb-16 reveal">
-                <h2 class="text-4xl md:text-5xl font-bold text-pedja-dark mb-4">Planos simples, sem surpresas.</h2>
+                <h2 class="text-4xl md:text-5xl font-bold text-pedja-dark mb-4 tracking-tight">Planos simples, sem surpresas.</h2>
             </div>
             <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 <div class="bg-white rounded-[2rem] border border-gray-200 p-8 shadow-xl relative reveal hover:border-orange-500 transition duration-300">
-                    <div class="absolute -top-4 inset-x-0 flex justify-center">
-                        <span class="bg-red-500 text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md animate-pulse">Apenas p/ os 10 primeiros</span>
-                    </div>
+                    <div class="absolute -top-4 inset-x-0 flex justify-center"><span class="bg-red-500 text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md animate-pulse">Apenas p/ os 10 primeiros</span></div>
                     <h3 class="text-2xl font-bold text-slate-800 mt-4">Plano Delivery</h3>
                     <div class="my-8">
                         <p class="text-sm text-slate-400 font-semibold line-through">De R$ 79,90</p>
-                        <div class="flex items-baseline gap-1 text-orange-600 justify-center">
-                            <span class="text-xl font-bold">R$</span>
-                            <span class="text-6xl font-bold tracking-tighter">49,90</span>
-                            <span class="text-sm font-semibold text-slate-500">/mês</span>
-                        </div>
+                        <div class="flex items-baseline gap-1 text-orange-600 justify-center"><span class="text-xl font-bold">R$</span><span class="text-6xl font-bold tracking-tighter">49,90</span><span class="text-sm font-semibold text-slate-500">/mês</span></div>
                     </div>
                     <ul class="space-y-4 mb-8 text-left">
                         <li class="flex items-center gap-3 font-medium"><i data-lucide="check-circle-2" class="text-green-500 w-5 h-5"></i> Cardápio Digital Completo</li>
@@ -192,23 +167,17 @@
                     <a href="cadastro.html" class="block w-full text-center bg-orange-100 hover:bg-orange-500 text-orange-600 hover:text-white font-bold uppercase tracking-wider py-4 rounded-lg transition">Começar Agora</a>
                 </div>
                 <div class="bg-pedja-dark rounded-[2rem] border border-slate-700 p-8 shadow-2xl relative reveal delay-100 transform md:-translate-y-4">
-                    <div class="absolute -top-4 inset-x-0 flex justify-center">
-                        <span class="bg-orange-500 text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md">O Mais Completo</span>
-                    </div>
+                    <div class="absolute -top-4 inset-x-0 flex justify-center"><span class="bg-orange-500 text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md">O Mais Completo</span></div>
                     <h3 class="text-2xl font-bold text-white mt-4 text-center">Plano Pro (Salão)</h3>
                     <div class="my-8">
-                        <div class="flex items-baseline gap-1 text-white justify-center">
-                            <span class="text-xl font-bold text-slate-400">R$</span>
-                            <span class="text-6xl font-bold tracking-tighter">129,90</span>
-                            <span class="text-sm font-semibold text-slate-400">/mês</span>
-                        </div>
+                        <div class="flex items-baseline gap-1 text-white justify-center"><span class="text-xl font-bold text-slate-400">R$</span><span class="text-6xl font-bold tracking-tighter">129,90</span><span class="text-sm font-semibold text-slate-400">/mês</span></div>
                     </div>
                     <ul class="space-y-4 mb-8 text-left">
                         <li class="flex items-center gap-3 text-white font-semibold"><i data-lucide="check-circle-2" class="text-orange-500 w-5 h-5"></i> Tudo do Plano Delivery</li>
                         <li class="flex items-center gap-3 text-slate-300 font-medium"><i data-lucide="check-circle-2" class="text-orange-500 w-5 h-5"></i> Gestão de Mesas e Salão</li>
                         <li class="flex items-center gap-3 text-slate-300 font-medium"><i data-lucide="check-circle-2" class="text-orange-500 w-5 h-5"></i> Cardápio via QR Code</li>
                     </ul>
-                    <a href="cadastro.html" class="block w-full text-center bg-orange-600 hover:bg-orange-500 text-white font-bold uppercase tracking-wider py-4 rounded-lg transition">Assinar Plano Pro</a>
+                    <a href="cadastro.html" class="block w-full text-center bg-orange-600 hover:bg-orange-700 text-white font-bold uppercase tracking-wider py-4 rounded-lg transition shadow-lg shadow-orange-500/20">Assinar Plano Pro</a>
                 </div>
             </div>
         </div>
@@ -217,8 +186,8 @@
     <section class="pb-24 px-6 bg-slate-50">
         <div class="max-w-6xl mx-auto bg-gradient-to-r from-orange-600 to-orange-500 rounded-[3rem] p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-10 shadow-2xl reveal relative overflow-hidden">
             <div class="text-center md:text-left relative z-10 text-white">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">Dúvidas?</h2>
-                <p class="text-orange-100 font-medium">Chame nosso time no WhatsApp.</p>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 leading-tight tracking-tight">Dúvidas?</h2>
+                <p class="text-orange-100 font-medium">Chame nosso time no WhatsApp: (27) 99955-3035</p>
             </div>
             <a href="https://wa.me/5527999553035" target="_blank" class="bg-white text-orange-600 px-10 py-5 rounded-lg font-bold uppercase tracking-widest shadow-xl hover:-translate-y-1 transition relative z-10">Falar no WhatsApp</a>
         </div>
